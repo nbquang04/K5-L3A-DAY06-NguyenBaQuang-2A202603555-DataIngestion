@@ -1,0 +1,267 @@
+{
+  "source_id": "thinkpython2",
+  "title": "Think Python, 2nd Edition, Version 2.4.1",
+  "author": "Allen B. Downey",
+  "source_path_or_url": "https://greenteapress.com/thinkpython2/thinkpython2.pdf",
+  "license_or_permission": "CC BY-NC 3.0; retain attribution and license; noncommercial educational use",
+  "license_url": "https://creativecommons.org/licenses/by-nc/3.0/",
+  "accessed_at": "2026-11-13T08:18:22.247286+00:00",
+  "sha256": "6033000bac3f9268ad75ee041bf8e5d9a3bc8a33bb156399cbd014918cb59f94",
+  "physical_page_count": 244,
+  "page_convention": "1-based physical PDF pages",
+  "counting_rule": "Chapters 8-12; exclude pages with fewer than 500 non-whitespace characters (blank/header-only pages). Include explanatory text and relevant exercises.",
+  "content_page_count": 50,
+  "pages": [
+    {
+      "page": 93,
+      "chapter": "Strings",
+      "char_count": 1211
+    },
+    {
+      "page": 94,
+      "chapter": "Strings",
+      "char_count": 2029
+    },
+    {
+      "page": 95,
+      "chapter": "Strings",
+      "char_count": 1667
+    },
+    {
+      "page": 96,
+      "chapter": "Strings",
+      "char_count": 1690
+    },
+    {
+      "page": 97,
+      "chapter": "Strings",
+      "char_count": 2098
+    },
+    {
+      "page": 98,
+      "chapter": "Strings",
+      "char_count": 1759
+    },
+    {
+      "page": 99,
+      "chapter": "Strings",
+      "char_count": 1868
+    },
+    {
+      "page": 100,
+      "chapter": "Strings",
+      "char_count": 2315
+    },
+    {
+      "page": 101,
+      "chapter": "Strings",
+      "char_count": 2234
+    },
+    {
+      "page": 102,
+      "chapter": "Strings",
+      "char_count": 2103
+    },
+    {
+      "page": 105,
+      "chapter": "Word play",
+      "char_count": 1874
+    },
+    {
+      "page": 106,
+      "chapter": "Word play",
+      "char_count": 2627
+    },
+    {
+      "page": 107,
+      "chapter": "Word play",
+      "char_count": 2440
+    },
+    {
+      "page": 108,
+      "chapter": "Word play",
+      "char_count": 2121
+    },
+    {
+      "page": 109,
+      "chapter": "Word play",
+      "char_count": 2262
+    },
+    {
+      "page": 110,
+      "chapter": "Word play",
+      "char_count": 3038
+    },
+    {
+      "page": 111,
+      "chapter": "Lists",
+      "char_count": 1226
+    },
+    {
+      "page": 112,
+      "chapter": "Lists",
+      "char_count": 1584
+    },
+    {
+      "page": 113,
+      "chapter": "Lists",
+      "char_count": 1714
+    },
+    {
+      "page": 114,
+      "chapter": "Lists",
+      "char_count": 1432
+    },
+    {
+      "page": 115,
+      "chapter": "Lists",
+      "char_count": 1921
+    },
+    {
+      "page": 116,
+      "chapter": "Lists",
+      "char_count": 1600
+    },
+    {
+      "page": 117,
+      "chapter": "Lists",
+      "char_count": 1790
+    },
+    {
+      "page": 118,
+      "chapter": "Lists",
+      "char_count": 1702
+    },
+    {
+      "page": 119,
+      "chapter": "Lists",
+      "char_count": 1456
+    },
+    {
+      "page": 120,
+      "chapter": "Lists",
+      "char_count": 1731
+    },
+    {
+      "page": 121,
+      "chapter": "Lists",
+      "char_count": 1926
+    },
+    {
+      "page": 122,
+      "chapter": "Lists",
+      "char_count": 2030
+    },
+    {
+      "page": 123,
+      "chapter": "Lists",
+      "char_count": 3272
+    },
+    {
+      "page": 125,
+      "chapter": "Dictionaries",
+      "char_count": 1548
+    },
+    {
+      "page": 126,
+      "chapter": "Dictionaries",
+      "char_count": 2124
+    },
+    {
+      "page": 127,
+      "chapter": "Dictionaries",
+      "char_count": 2417
+    },
+    {
+      "page": 128,
+      "chapter": "Dictionaries",
+      "char_count": 1540
+    },
+    {
+      "page": 129,
+      "chapter": "Dictionaries",
+      "char_count": 2178
+    },
+    {
+      "page": 130,
+      "chapter": "Dictionaries",
+      "char_count": 2253
+    },
+    {
+      "page": 131,
+      "chapter": "Dictionaries",
+      "char_count": 1567
+    },
+    {
+      "page": 132,
+      "chapter": "Dictionaries",
+      "char_count": 2147
+    },
+    {
+      "page": 133,
+      "chapter": "Dictionaries",
+      "char_count": 2498
+    },
+    {
+      "page": 134,
+      "chapter": "Dictionaries",
+      "char_count": 2346
+    },
+    {
+      "page": 135,
+      "chapter": "Dictionaries",
+      "char_count": 3590
+    },
+    {
+      "page": 137,
+      "chapter": "Tuples",
+      "char_count": 1247
+    },
+    {
+      "page": 138,
+      "chapter": "Tuples",
+      "char_count": 1672
+    },
+    {
+      "page": 139,
+      "chapter": "Tuples",
+      "char_count": 1835
+    },
+    {
+      "page": 140,
+      "chapter": "Tuples",
+      "char_count": 1712
+    },
+    {
+      "page": 141,
+      "chapter": "Tuples",
+      "char_count": 2021
+    },
+    {
+      "page": 142,
+      "chapter": "Tuples",
+      "char_count": 2357
+    },
+    {
+      "page": 143,
+      "chapter": "Tuples",
+      "char_count": 1881
+    },
+    {
+      "page": 144,
+      "chapter": "Tuples",
+      "char_count": 2190
+    },
+    {
+      "page": 145,
+      "chapter": "Tuples",
+      "char_count": 2702
+    },
+    {
+      "page": 146,
+      "chapter": "Tuples",
+      "char_count": 1984
+    }
+  ],
+  "limitations": "Layout extraction retains many paragraphs but may merge italic words, hyphenate words, or lose code indentation. Diagrams are not interpreted. Book describes an older Python version; benchmark asks about this source, not current Python behavior."
+}

@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-13T10:37:34.634186+00:00",
+  "python": "3.12.10",
+  "packages": {
+    "sentence-transformers": "6.3.0",
+    "transformers": "5.22.2",
+    "torch": "2.15.0",
+    "pypdf": "6.21.4",
+    "psycopg": "3.3.8"
+  },
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dimensions": 384,
+  "max_sequence_length": 256,
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "device": "cpu",
+  "normalized_vectors": true,
+  "query_document_processing": "same encode; no prefixes",
+  "seconds": 23.377449299994623,
+  "paid_api_cost": 0,
+  "benchmark_sha256": "f280f6ee8c4aaaaa2dd07532eeaf3fd81dc8309ea92308d2a0fd7d6a1f3736a6",
+  "human_audit_status": "pending",
+  "model_revision_provenance": "Recovered post-run from cache and verified; see model_provenance.json"
+}

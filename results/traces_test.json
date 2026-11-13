@@ -1,0 +1,1045 @@
+[
+  {
+    "question": {
+      "id": "q16",
+      "split": "test",
+      "question": "In the Tuples chapter, how do you create a one-element tuple?",
+      "expected_answer": "Include a final comma.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 137,
+      "evidence_quote": "To create a tuple with a single element, you have to include a final comma:",
+      "filter": {
+        "chapter": "Tuples"
+      },
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "99c0ab1fe91073440df871df",
+        "text": "d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 900,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.7214890288419123
+      },
+      {
+        "chunk_id": "41f52f58b6423a67591f5153",
+        "text": "quadruple”.\n\n12.1    Tuples are immutable\n\nA  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, y",
+        "metadata": {
+          "end": 950,
+          "page": 137,
+          "start": 450,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6656186580657959
+      },
+      {
+        "chunk_id": "a464cdb6a0bc957818a560ea",
+        "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\nA  tupl",
+        "metadata": {
+          "end": 500,
+          "page": 137,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6478404998779297
+      }
+    ],
+    "evidence_matches": [
+      true,
+      false,
+      false
+    ],
+    "hit1": true,
+    "hit3": true,
+    "strategy": "A",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q16",
+      "split": "test",
+      "question": "In the Tuples chapter, how do you create a one-element tuple?",
+      "expected_answer": "Include a final comma.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 137,
+      "evidence_quote": "To create a tuple with a single element, you have to include a final comma:",
+      "filter": {
+        "chapter": "Tuples"
+      },
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "9ee9f92323a97fe5a256b714",
+        "text": "A  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 493,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.7109427452087402
+      },
+      {
+        "chunk_id": "1581aa80a63e2ffe172aba3d",
+        "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\n",
+        "metadata": {
+          "end": 493,
+          "page": 137,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6343053579330444
+      },
+      {
+        "chunk_id": "759f8ef379872c62b479359a",
+        "text": "118                                                                                                                       Chapter 12. Tuples\n12.4    Variable-length argument tuples\n\n",
+        "metadata": {
+          "end": 182,
+          "page": 140,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6296723926457936
+      }
+    ],
+    "evidence_matches": [
+      true,
+      false,
+      false
+    ],
+    "hit1": true,
+    "hit3": true,
+    "strategy": "B",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q16",
+      "split": "test",
+      "question": "In the Tuples chapter, how do you create a one-element tuple?",
+      "expected_answer": "Include a final comma.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 137,
+      "evidence_quote": "To create a tuple with a single element, you have to include a final comma:",
+      "filter": {
+        "chapter": "Tuples"
+      },
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "9ee9f92323a97fe5a256b714",
+        "text": "A  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 493,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.7109427452087402
+      },
+      {
+        "chunk_id": "1581aa80a63e2ffe172aba3d",
+        "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\n",
+        "metadata": {
+          "end": 493,
+          "page": 137,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6343053579330444
+      },
+      {
+        "chunk_id": "759f8ef379872c62b479359a",
+        "text": "118                                                                                                                       Chapter 12. Tuples\n12.4    Variable-length argument tuples\n\n",
+        "metadata": {
+          "end": 182,
+          "page": 140,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6296723926457936
+      }
+    ],
+    "evidence_matches": [
+      true,
+      false,
+      false
+    ],
+    "hit1": true,
+    "hit3": true,
+    "strategy": "C",
+    "applied_filter": {
+      "chapter": "Tuples"
+    }
+  },
+  {
+    "question": {
+      "id": "q17",
+      "split": "test",
+      "question": "What must be true of the numbers of variables and values in tuple assignment?",
+      "expected_answer": "They must be the same.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 139,
+      "evidence_quote": "The number of variables on the left and the number of values on the right have to be the same:",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "2447d0669f460b89d7564f45",
+        "text": "12.3. Tuples as return values                                                                                                      117\n\nThe left side is a tuple of variables;  the right side is a tuple of expressions.   Each value\nis assigned to its respective variable.  All the expressions on the right side are evaluated\nbefore any of the assignments.\n\nThe number of variables on the left and the number of values on the right have to be the\nsame:\n>>>  a,  b  =  1,  2,  3\nValueError:  too  many  ",
+        "metadata": {
+          "end": 500,
+          "page": 139,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.7189728021621704
+      },
+      {
+        "chunk_id": "c5fdd2c4f3cfdf528c1686de",
+        "text": "(0,  3,  4)\nTrue\n\n12.2    Tuple assignment\n\nIt is often useful to swap the values of two variables. With conventional assignments, you\nhave to use a temporary variable. For example, to swapaandb:\n>>>  temp  =  a\n>>>  a  =  b\n>>>  b  =  temp\nThis solution is cumbersome;tuple assignmentis more elegant:\n>>>  a,  b  =  b,  a",
+        "metadata": {
+          "end": 1672,
+          "page": 138,
+          "start": 1350,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6262083053588867
+      },
+      {
+        "chunk_id": "b9feb893d0213e1e206e278b",
+        "text": "shape(d)\n'dict  of  3  int->str'\nIf you are having trouble keeping track of your data structures,structshapecan help.\n\n12.9    Glossary\n\ntuple:An immutable sequence of elements.\n\ntuple assignment:An assignment with a sequence on the right side and a tuple of vari-\n       ables on the left. The right side is evaluated and then its elements are assigned to the\n       variables on the left.",
+        "metadata": {
+          "end": 2190,
+          "page": 144,
+          "start": 1800,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5817840695381165
+      }
+    ],
+    "evidence_matches": [
+      true,
+      false,
+      false
+    ],
+    "hit1": true,
+    "hit3": true,
+    "strategy": "A",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q17",
+      "split": "test",
+      "question": "What must be true of the numbers of variables and values in tuple assignment?",
+      "expected_answer": "They must be the same.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 139,
+      "evidence_quote": "The number of variables on the left and the number of values on the right have to be the same:",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "27b29d55e18fa26e36cc0ae6",
+        "text": "tuple assignment:An assignment with a sequence on the right side and a tuple of vari-\n       ables on the left. The right side is evaluated and then its elements are assigned to the\n       variables on the left.",
+        "metadata": {
+          "end": 2190,
+          "page": 144,
+          "start": 1979,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.7641596794128418
+      },
+      {
+        "chunk_id": "759f8ef379872c62b479359a",
+        "text": "118                                                                                                                       Chapter 12. Tuples\n12.4    Variable-length argument tuples\n\n",
+        "metadata": {
+          "end": 182,
+          "page": 140,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6201678967275787
+      },
+      {
+        "chunk_id": "9ee9f92323a97fe5a256b714",
+        "text": "A  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 493,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5765670537948608
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "B",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q17",
+      "split": "test",
+      "question": "What must be true of the numbers of variables and values in tuple assignment?",
+      "expected_answer": "They must be the same.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 139,
+      "evidence_quote": "The number of variables on the left and the number of values on the right have to be the same:",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "27b29d55e18fa26e36cc0ae6",
+        "text": "tuple assignment:An assignment with a sequence on the right side and a tuple of vari-\n       ables on the left. The right side is evaluated and then its elements are assigned to the\n       variables on the left.",
+        "metadata": {
+          "end": 2190,
+          "page": 144,
+          "start": 1979,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.7641596794128418
+      },
+      {
+        "chunk_id": "759f8ef379872c62b479359a",
+        "text": "118                                                                                                                       Chapter 12. Tuples\n12.4    Variable-length argument tuples\n\n",
+        "metadata": {
+          "end": 182,
+          "page": 140,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6201678967275787
+      },
+      {
+        "chunk_id": "9ee9f92323a97fe5a256b714",
+        "text": "A  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 493,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5765670537948608
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "C",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q18",
+      "split": "test",
+      "question": "What does a parameter beginning with an asterisk gather arguments into?",
+      "expected_answer": "A tuple.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 140,
+      "evidence_quote": "A parameter name that begins with *gathersarguments into a tuple.",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "de245a3b0df9717b5ae60135",
+        "text": "118                                                                                                                       Chapter 12. Tuples\n12.4    Variable-length argument tuples\n\nFunctions can take a variable number of arguments.  A parameter name that begins with\n*gathersarguments into a tuple.  For example,printalltakes any number of arguments\nand prints them:\ndef  printall(*args):\n     print(args)\nThe gather parameter can have any name you like, butargsis conventional.  Here’s how\nthe func",
+        "metadata": {
+          "end": 500,
+          "page": 140,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.549960222842681
+      },
+      {
+        "chunk_id": "0c9bd62fb95c4f59c4ca2f39",
+        "text": "76                                                                                                                          Chapter 8. Strings\n\nThis form of dot notation specifies the name of the method,upper, and the name of the\nstring  to  apply  the  method  to,word.   The  empty  parentheses  indicate  that  this  method\ntakes no arguments.\n\nA method call is called aninvocation;  in this case,  we would say that we are invoking\nupperonword.\nAs  it  turns  out,  there  is  a  string  method  ",
+        "metadata": {
+          "end": 500,
+          "page": 98,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Strings",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5199506282806396
+      },
+      {
+        "chunk_id": "e49cb1b0d029aaf2cb8baf75",
+        "text": "nt backward from the end of the string.  The\nexpressionfruit[-1]yields the last letter,fruit[-2]yields the second to last, and so on.\n\n8.3    Traversal with aforloop\n\nA lot of computations involve processing a string one character at a time. Often they start\nat the beginning, select each character in turn, do something to it, and continue until the\nend. This pattern of processing is called atraversal. One way to write a traversal is with a\nwhileloop:\nindex  =  0\nwhile  index  <  len(fruit):\n    ",
+        "metadata": {
+          "end": 1400,
+          "page": 94,
+          "start": 900,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Strings",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4190286494459361
+      }
+    ],
+    "evidence_matches": [
+      true,
+      false,
+      false
+    ],
+    "hit1": true,
+    "hit3": true,
+    "strategy": "A",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q18",
+      "split": "test",
+      "question": "What does a parameter beginning with an asterisk gather arguments into?",
+      "expected_answer": "A tuple.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 140,
+      "evidence_quote": "A parameter name that begins with *gathersarguments into a tuple.",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "02cf2108cbb72515f68ec2f4",
+        "text": "76                                                                                                                          Chapter 8. Strings\n\nThis form of dot notation specifies the name of the method,upper, and the name of the\nstring  to  apply  the  method  to,word.   The  empty  parentheses  indicate  that  this  method\ntakes no arguments.\n\nA method call is called aninvocation;  in this case,  we would say that we are invoking\nupperonword.\nAs  it  turns  out,  there  is  a  string  method  namedfindthat  is  remarkably  similar  to  the\nfunction we wrote:\n>>>  word  ='banana'\n>>>  index  =  word.find('a')\n>>>  index\n1\nIn this example, we invokefindonwordand pass the letter we are looking for as a param-\neter.\n\n",
+        "metadata": {
+          "end": 725,
+          "page": 98,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Strings",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5290209054946899
+      },
+      {
+        "chunk_id": "51e9b03190e975c9a1e245f1",
+        "text": "Functions can take a variable number of arguments.  A parameter name that begins with\n*gathersarguments into a tuple.  For example,printalltakes any number of arguments\nand prints them:\ndef  printall(*args):\n     print(args)\nThe gather parameter can have any name you like, butargsis conventional.  Here’s how\nthe function works:\n>>>  printall(1,  2.0,'3')\n(1,  2.0,'3')\nThe complement of gather isscatter. If you have a sequence of values and you want to pass\nit to a function as multiple arguments, you can use the*operator.  For example,divmod\ntakes exactly two arguments; it doesn’t work with a tuple:\n>>>  t  =  (7,  3)\n>>>  divmod(t)\nTypeError:  divmod  expected  2  arguments,  got  1\nBut if you scatter the tuple, it works:\n>>>  divmod(*t)\n(2,  1)\nMany of the built-in functions use variable-length argument tuples. For example,maxand\nmincan take any number of arguments:\n>>>  max(1,  2,  3)\n3\nButsumdoes not.\n>>>  sum(1,  2,  3)\nTypeError:  sum  expected  at  most  2  arguments,  got  3\n",
+        "metadata": {
+          "end": 1179,
+          "page": 140,
+          "start": 182,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4173075085075949
+      },
+      {
+        "chunk_id": "d4f68cb8d2e2cebf9def2b3a",
+        "text": "Chapter 8\n\nStrings\n\nStrings are not like integers, floats, and booleans. A string is asequence, which means it is\nan ordered collection of other values. In this chapter you’ll see how to access the characters\nthat make up a string, and you’ll learn about some of the methods strings provide.\n\n8.1    A string is a sequence\n\nA string is a sequence of characters.  You can access the characters one at a time with the\nbracket operator:\n>>>  fruit  ='banana'\n>>>  letter  =  fruit[1]\nThe second statement selects character number 1 fromfruitand assigns it toletter.\nThe expression in brackets is called anindex.  The index indicates which character in the\nsequence you want (hence the name).\n\n",
+        "metadata": {
+          "end": 690,
+          "page": 93,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Strings",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4134391248226166
+      }
+    ],
+    "evidence_matches": [
+      false,
+      true,
+      false
+    ],
+    "hit1": false,
+    "hit3": true,
+    "strategy": "B",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q18",
+      "split": "test",
+      "question": "What does a parameter beginning with an asterisk gather arguments into?",
+      "expected_answer": "A tuple.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 140,
+      "evidence_quote": "A parameter name that begins with *gathersarguments into a tuple.",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "02cf2108cbb72515f68ec2f4",
+        "text": "76                                                                                                                          Chapter 8. Strings\n\nThis form of dot notation specifies the name of the method,upper, and the name of the\nstring  to  apply  the  method  to,word.   The  empty  parentheses  indicate  that  this  method\ntakes no arguments.\n\nA method call is called aninvocation;  in this case,  we would say that we are invoking\nupperonword.\nAs  it  turns  out,  there  is  a  string  method  namedfindthat  is  remarkably  similar  to  the\nfunction we wrote:\n>>>  word  ='banana'\n>>>  index  =  word.find('a')\n>>>  index\n1\nIn this example, we invokefindonwordand pass the letter we are looking for as a param-\neter.\n\n",
+        "metadata": {
+          "end": 725,
+          "page": 98,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Strings",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5290209054946899
+      },
+      {
+        "chunk_id": "51e9b03190e975c9a1e245f1",
+        "text": "Functions can take a variable number of arguments.  A parameter name that begins with\n*gathersarguments into a tuple.  For example,printalltakes any number of arguments\nand prints them:\ndef  printall(*args):\n     print(args)\nThe gather parameter can have any name you like, butargsis conventional.  Here’s how\nthe function works:\n>>>  printall(1,  2.0,'3')\n(1,  2.0,'3')\nThe complement of gather isscatter. If you have a sequence of values and you want to pass\nit to a function as multiple arguments, you can use the*operator.  For example,divmod\ntakes exactly two arguments; it doesn’t work with a tuple:\n>>>  t  =  (7,  3)\n>>>  divmod(t)\nTypeError:  divmod  expected  2  arguments,  got  1\nBut if you scatter the tuple, it works:\n>>>  divmod(*t)\n(2,  1)\nMany of the built-in functions use variable-length argument tuples. For example,maxand\nmincan take any number of arguments:\n>>>  max(1,  2,  3)\n3\nButsumdoes not.\n>>>  sum(1,  2,  3)\nTypeError:  sum  expected  at  most  2  arguments,  got  3\n",
+        "metadata": {
+          "end": 1179,
+          "page": 140,
+          "start": 182,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4173075085075949
+      },
+      {
+        "chunk_id": "d4f68cb8d2e2cebf9def2b3a",
+        "text": "Chapter 8\n\nStrings\n\nStrings are not like integers, floats, and booleans. A string is asequence, which means it is\nan ordered collection of other values. In this chapter you’ll see how to access the characters\nthat make up a string, and you’ll learn about some of the methods strings provide.\n\n8.1    A string is a sequence\n\nA string is a sequence of characters.  You can access the characters one at a time with the\nbracket operator:\n>>>  fruit  ='banana'\n>>>  letter  =  fruit[1]\nThe second statement selects character number 1 fromfruitand assigns it toletter.\nThe expression in brackets is called anindex.  The index indicates which character in the\nsequence you want (hence the name).\n\n",
+        "metadata": {
+          "end": 690,
+          "page": 93,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Strings",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4134391248226166
+      }
+    ],
+    "evidence_matches": [
+      false,
+      true,
+      false
+    ],
+    "hit1": false,
+    "hit3": true,
+    "strategy": "C",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q19",
+      "split": "test",
+      "question": "When zip receives sequences of unequal length, how long is the result?",
+      "expected_answer": "As long as the shorter sequence.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 141,
+      "evidence_quote": "If the sequences are not the same length, the result has the length of the shorter one.",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "86f346c60c07521b789acf10",
+        "text": " or more sequences and interleaves them. The name\nof the function refers to a zipper, which interleaves two rows of teeth.\n\nThis example zips a string and a list:\n>>>  s  ='abc'\n>>>  t  =  [0,  1,  2]\n>>>  zip(s,  t)\n<zip  object  at  0x7f7d0a9e7c48>\nThe result is azip objectthat knows how to iterate through the pairs.  The most common\nuse ofzipis in aforloop:",
+        "metadata": {
+          "end": 1712,
+          "page": 140,
+          "start": 1350,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5117321014404297
+      },
+      {
+        "chunk_id": "3b0dbb23d5743b43aca4e02c",
+        "text": "12.5. Lists and tuples                                                                                                                   119\n\n>>>  for  pair  in  zip(s,  t):\n...          print(pair)\n...\n('a',  0)\n('b',  1)\n('c',  2)\nA  zip  object  is  a  kind  ofiterator,  which  is  any  object  that  iterates  through  a  sequence.\nIterators are similar to lists in some ways, but unlike lists, you can’t use an index to select\nan element from an iterator.\n\nIf you want to use list operators and",
+        "metadata": {
+          "end": 500,
+          "page": 141,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5005082487454153
+      },
+      {
+        "chunk_id": "34567e06cb3534bf03743381",
+        "text": " time.  For example,has_matchtakes two sequences,t1\nandt2, and returnsTrueif there is an indexisuch thatt1[i]  ==  t2[i]:\ndef  has_match(t1,  t2):\n      for  x,  y  in  zip(t1,  t2):\n            if  x  ==  y:\n                   return  True\n      return  False\nIf you need to traverse the elements of a sequence and their indices, you can use the built-in\nfunctionenumerate:\nfor  index,  element  in  enumerate('abc'):\n      print(index,  element)\nThe result fromenumerateis an enumerate object, whic",
+        "metadata": {
+          "end": 1850,
+          "page": 141,
+          "start": 1350,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.47290459436746946
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "A",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q19",
+      "split": "test",
+      "question": "When zip receives sequences of unequal length, how long is the result?",
+      "expected_answer": "As long as the shorter sequence.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 141,
+      "evidence_quote": "If the sequences are not the same length, the result has the length of the shorter one.",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "83c6b2ded22829dddde6a20b",
+        "text": "As an exercise, write a function calledsum_allthat takes any number of arguments and\nreturns their sum.\n\n12.5    Lists and tuples\n\nzipis a built-in function that takes two or more sequences and interleaves them. The name\nof the function refers to a zipper, which interleaves two rows of teeth.\n\nThis example zips a string and a list:\n>>>  s  ='abc'\n>>>  t  =  [0,  1,  2]\n>>>  zip(s,  t)\n<zip  object  at  0x7f7d0a9e7c48>\nThe result is azip objectthat knows how to iterate through the pairs.  The most common\nuse ofzipis in aforloop:",
+        "metadata": {
+          "end": 1712,
+          "page": 140,
+          "start": 1179,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.523644208908081
+      },
+      {
+        "chunk_id": "fa0fa6bb3e494aa126929f66",
+        "text": "12.5. Lists and tuples                                                                                                                   119\n\n>>>  for  pair  in  zip(s,  t):\n...          print(pair)\n...\n('a',  0)\n('b',  1)\n('c',  2)\nA  zip  object  is  a  kind  ofiterator,  which  is  any  object  that  iterates  through  a  sequence.\nIterators are similar to lists in some ways, but unlike lists, you can’t use an index to select\nan element from an iterator.\n\n",
+        "metadata": {
+          "end": 463,
+          "page": 141,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5135921239852905
+      },
+      {
+        "chunk_id": "5814b0614dfc026cdb049e1c",
+        "text": "andt2, and returnsTrueif there is an indexisuch thatt1[i]  ==  t2[i]:\ndef  has_match(t1,  t2):\n      for  x,  y  in  zip(t1,  t2):\n            if  x  ==  y:\n                   return  True\n      return  False\nIf you need to traverse the elements of a sequence and their indices, you can use the built-in\nfunctionenumerate:\nfor  index,  element  in  enumerate('abc'):\n      print(index,  element)\nThe result fromenumerateis an enumerate object, which iterates a sequence of pairs; each\npair contains an index (starting from 0) and an element from the given sequence.  In this\nexample, the output is\n0  a\n1  b\n2  c\nAgain.",
+        "metadata": {
+          "end": 2021,
+          "page": 141,
+          "start": 1402,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4348817506503023
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "B",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q19",
+      "split": "test",
+      "question": "When zip receives sequences of unequal length, how long is the result?",
+      "expected_answer": "As long as the shorter sequence.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 141,
+      "evidence_quote": "If the sequences are not the same length, the result has the length of the shorter one.",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "83c6b2ded22829dddde6a20b",
+        "text": "As an exercise, write a function calledsum_allthat takes any number of arguments and\nreturns their sum.\n\n12.5    Lists and tuples\n\nzipis a built-in function that takes two or more sequences and interleaves them. The name\nof the function refers to a zipper, which interleaves two rows of teeth.\n\nThis example zips a string and a list:\n>>>  s  ='abc'\n>>>  t  =  [0,  1,  2]\n>>>  zip(s,  t)\n<zip  object  at  0x7f7d0a9e7c48>\nThe result is azip objectthat knows how to iterate through the pairs.  The most common\nuse ofzipis in aforloop:",
+        "metadata": {
+          "end": 1712,
+          "page": 140,
+          "start": 1179,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.523644208908081
+      },
+      {
+        "chunk_id": "fa0fa6bb3e494aa126929f66",
+        "text": "12.5. Lists and tuples                                                                                                                   119\n\n>>>  for  pair  in  zip(s,  t):\n...          print(pair)\n...\n('a',  0)\n('b',  1)\n('c',  2)\nA  zip  object  is  a  kind  ofiterator,  which  is  any  object  that  iterates  through  a  sequence.\nIterators are similar to lists in some ways, but unlike lists, you can’t use an index to select\nan element from an iterator.\n\n",
+        "metadata": {
+          "end": 463,
+          "page": 141,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.5135921239852905
+      },
+      {
+        "chunk_id": "5814b0614dfc026cdb049e1c",
+        "text": "andt2, and returnsTrueif there is an indexisuch thatt1[i]  ==  t2[i]:\ndef  has_match(t1,  t2):\n      for  x,  y  in  zip(t1,  t2):\n            if  x  ==  y:\n                   return  True\n      return  False\nIf you need to traverse the elements of a sequence and their indices, you can use the built-in\nfunctionenumerate:\nfor  index,  element  in  enumerate('abc'):\n      print(index,  element)\nThe result fromenumerateis an enumerate object, which iterates a sequence of pairs; each\npair contains an index (starting from 0) and an element from the given sequence.  In this\nexample, the output is\n0  a\n1  b\n2  c\nAgain.",
+        "metadata": {
+          "end": 2021,
+          "page": 141,
+          "start": 1402,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.4348817506503023
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "C",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q20",
+      "split": "test",
+      "question": "What can initialize a dictionary using tuples?",
+      "expected_answer": "A list of key-value tuples.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 142,
+      "evidence_quote": "you can use a list of tuples to initialize a new dictionary:",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "1508c65e4fcc3252b1d008b5",
+        "text": "120                                                                                                                       Chapter 12. Tuples\n12.6    Dictionaries and tuples\n\nDictionaries  have  a  method  calleditemsthat  returns  a  sequence  of  tuples,  where  each\ntuple is a key-value pair.\n>>>  d  =  {'a':0,'b':1,'c':2}\n>>>  t  =  d.items()\n>>>  t\ndict_items([('c',  2),  ('a',  0),  ('b',  1)])\nThe result is adict_itemsobject, which is an iterator that iterates the key-value pairs. You\ncan ",
+        "metadata": {
+          "end": 500,
+          "page": 142,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6561183929443359
+      },
+      {
+        "chunk_id": "9e89f02d1b0371e93337719e",
+        "text": "he\ncharacters in a string (as opposed to creating a new string), you might want to use a list of\ncharacters instead.\n\nLists are more common than tuples, mostly because they are mutable.  But there are a few\ncases where you might prefer tuples:\n\n   1.  In some contexts, like areturnstatement, it is syntactically simpler to create a tuple\n       than a list.\n\n   2.  If you want to use a sequence as a dictionary key, you have to use an immutable type\n       like a tuple or string.\n\n   3.  If you ar",
+        "metadata": {
+          "end": 1400,
+          "page": 143,
+          "start": 900,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.649891197681427
+      },
+      {
+        "chunk_id": "a464cdb6a0bc957818a560ea",
+        "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\nA  tupl",
+        "metadata": {
+          "end": 500,
+          "page": 137,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.647504448890686
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "A",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q20",
+      "split": "test",
+      "question": "What can initialize a dictionary using tuples?",
+      "expected_answer": "A list of key-value tuples.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 142,
+      "evidence_quote": "you can use a list of tuples to initialize a new dictionary:",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "29993326ca217a4db911e5a8",
+        "text": "120                                                                                                                       Chapter 12. Tuples\n12.6    Dictionaries and tuples\n\n",
+        "metadata": {
+          "end": 174,
+          "page": 142,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6950628964621695
+      },
+      {
+        "chunk_id": "9ee9f92323a97fe5a256b714",
+        "text": "A  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 493,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.642630934715271
+      },
+      {
+        "chunk_id": "1581aa80a63e2ffe172aba3d",
+        "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\n",
+        "metadata": {
+          "end": 493,
+          "page": 137,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6386978626251221
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "B",
+    "applied_filter": null
+  },
+  {
+    "question": {
+      "id": "q20",
+      "split": "test",
+      "question": "What can initialize a dictionary using tuples?",
+      "expected_answer": "A list of key-value tuples.",
+      "gold_source_id": "thinkpython2",
+      "gold_page": 142,
+      "evidence_quote": "you can use a list of tuples to initialize a new dictionary:",
+      "filter": null,
+      "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+    },
+    "hits": [
+      {
+        "chunk_id": "29993326ca217a4db911e5a8",
+        "text": "120                                                                                                                       Chapter 12. Tuples\n12.6    Dictionaries and tuples\n\n",
+        "metadata": {
+          "end": 174,
+          "page": 142,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6950628964621695
+      },
+      {
+        "chunk_id": "9ee9f92323a97fe5a256b714",
+        "text": "A  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+        "metadata": {
+          "end": 1247,
+          "page": 137,
+          "start": 493,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.642630934715271
+      },
+      {
+        "chunk_id": "1581aa80a63e2ffe172aba3d",
+        "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\n",
+        "metadata": {
+          "end": 493,
+          "page": 137,
+          "start": 0,
+          "source": "data/raw/thinkpython2.pdf",
+          "chapter": "Tuples",
+          "version": "2nd edition, 2.4.1",
+          "language": "en",
+          "document_id": "thinkpython2"
+        },
+        "score": 0.6386978626251221
+      }
+    ],
+    "evidence_matches": [
+      false,
+      false,
+      false
+    ],
+    "hit1": false,
+    "hit3": false,
+    "strategy": "C",
+    "applied_filter": null
+  }
+]

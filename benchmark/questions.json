@@ -1,0 +1,228 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "What is a string a sequence of?",
+    "expected_answer": "Characters.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 93,
+    "evidence_quote": "A string is a sequence of characters.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "What does an index indicate in a sequence?",
+    "expected_answer": "Which character in the sequence you want.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 93,
+    "evidence_quote": "The index indicates which character in the sequence you want (hence the name).",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "Does a string slice include its last boundary character?",
+    "expected_answer": "It includes the first and excludes the last.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 95,
+    "evidence_quote": "The operator[n:m]returns the part of the string from the “n-eth” character to the “m-eth” character, including the first but excluding the last. This behavior is counterintuitive, but",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "What does the find function return if the character is absent?",
+    "expected_answer": "-1.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 97,
+    "evidence_quote": "If the character is not found, the function returns-1.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "In the Strings chapter, what does the upper method produce?",
+    "expected_answer": "A new string with all uppercase letters.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 97,
+    "evidence_quote": "For example, the methoduppertakes a string and returns a new string with all uppercase letters.",
+    "filter": {
+      "chapter": "Strings"
+    },
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "Can a list contain elements of different types?",
+    "expected_answer": "Yes; elements need not be the same type.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 111,
+    "evidence_quote": "The elements of a list don’t have to be the same type.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "What is a list within another list called?",
+    "expected_answer": "Nested.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 111,
+    "evidence_quote": "A list within another list isnested.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "Does a for loop over an empty list execute its body?",
+    "expected_answer": "No.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 113,
+    "evidence_quote": "Aforloop over an empty list never runs the body: for x in []: print('This never happens.')",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "What operator concatenates lists?",
+    "expected_answer": "The + operator.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 113,
+    "evidence_quote": "The+operator concatenates lists:",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "What built-in function adds up the elements of a list?",
+    "expected_answer": "sum.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 115,
+    "evidence_quote": "Adding up the elements of a list is such a common operation that Python provides it as a built-in function,sum:",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "In the Lists chapter, what does the split method do to a string?",
+    "expected_answer": "Breaks it into words.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 117,
+    "evidence_quote": "If you want to break a string into words, you can use thesplitmethod:",
+    "filter": {
+      "chapter": "Lists"
+    },
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "How many values is each dictionary key associated with?",
+    "expected_answer": "A single value.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 125,
+    "evidence_quote": "Each key is associated with a single value.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "What happens when a dictionary lookup uses an absent key?",
+    "expected_answer": "An exception is raised (KeyError in the example).",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 126,
+    "evidence_quote": "If the key isn’t in the dictionary, you get an exception: >>> eng2sp[']'four KeyError:'four'",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "Why is a dictionary advantageous for counting letters?",
+    "expected_answer": "You need not know all letters ahead of time and only allocate for letters present.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 127,
+    "evidence_quote": "an advantage of the dictionary implementation is that we don’t have to know ahead of time which letters appear in the string and we only have to make room for the letters that do appear.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "What is a memo in the Fibonacci discussion?",
+    "expected_answer": "A previously computed value stored for later use.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 131,
+    "evidence_quote": "A previously computed value that is stored for later use is called amemo.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "In the Tuples chapter, how do you create a one-element tuple?",
+    "expected_answer": "Include a final comma.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 137,
+    "evidence_quote": "To create a tuple with a single element, you have to include a final comma:",
+    "filter": {
+      "chapter": "Tuples"
+    },
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "What must be true of the numbers of variables and values in tuple assignment?",
+    "expected_answer": "They must be the same.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 139,
+    "evidence_quote": "The number of variables on the left and the number of values on the right have to be the same:",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "What does a parameter beginning with an asterisk gather arguments into?",
+    "expected_answer": "A tuple.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 140,
+    "evidence_quote": "A parameter name that begins with *gathersarguments into a tuple.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "When zip receives sequences of unequal length, how long is the result?",
+    "expected_answer": "As long as the shorter sequence.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 141,
+    "evidence_quote": "If the sequences are not the same length, the result has the length of the shorter one.",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "What can initialize a dictionary using tuples?",
+    "expected_answer": "A list of key-value tuples.",
+    "gold_source_id": "thinkpython2",
+    "gold_page": 142,
+    "evidence_quote": "you can use a list of tuples to initialize a new dictionary:",
+    "filter": null,
+    "label_provenance": "AI drafted; quote checked against extracted physical page; student review required"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-11-13T12:08:10.111954+00:00",
+  "provenance": "Post-run re-extraction audit; original run timings unchanged",
+  "pdf_sha256": "6033000bac3f9268ad75ee041bf8e5d9a3bc8a33bb156399cbd014918cb59f94",
+  "total_pages": 244,
+  "selected_pages": 50,
+  "skipped_pages": 194,
+  "empty_pages": 1,
+  "extraction_errors": 0,
+  "failures": []
+}

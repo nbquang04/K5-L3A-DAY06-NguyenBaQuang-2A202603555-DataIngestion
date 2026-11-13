@@ -1,0 +1,9 @@
+{
+  "frozen_at": "2026-11-13T08:29:25.530550+00:00",
+  "questions_sha256": "f280f6ee8c4aaaaa2dd07532eeaf3fd81dc8309ea92308d2a0fd7d6a1f3736a6",
+  "selection_rule": "Maximize dev exact-evidence Hit@3, then Hit@1, then lower chunk count; alphabetical tie-break. Freeze before test.",
+  "split": "First 15 development, last 5 test; same book and topics, so topic leakage and small sample limit generalization.",
+  "coherence_sample": "First ten selected physical pages, character position floor(page length / 2), chosen before retrieval.",
+  "human_review_status": "Pending; AI-drafted benchmark and audit sheets require student review. Do not tune using test.",
+  "evidence_review": "Evidence spans corrected for completeness before any test retrieval; no test scores used."
+}

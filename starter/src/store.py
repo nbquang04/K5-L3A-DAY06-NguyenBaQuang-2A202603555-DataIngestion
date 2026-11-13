@@ -1,28 +1,44 @@
-"""TODO: store and search vectors using PostgreSQL + pgvector."""
-from typing import Any
-from .models import Chunk
-
+"""Persistent pgvector store with exact cosine search."""
+import math
+import psycopg
+from psycopg.types.json import Jsonb
 
 class PgVectorStore:
-    def __init__(self, database_url: str, dimensions: int) -> None:
-        """TODO: retain connection settings; validate model dimensions."""
-        raise NotImplementedError("TODO: initialize store")
+    def __init__(self, database_url, dimensions):
+        if not isinstance(dimensions, int) or not 0 < dimensions <= 2000:
+            raise ValueError('Invalid dimensions')
+        self.database_url, self.dimensions = database_url, dimensions
 
-    def create_schema(self) -> None:
-        """TODO: create table with vector column and source/page/filter metadata."""
-        raise NotImplementedError("TODO: create_schema")
+    def vector(self, values):
+        if len(values) != self.dimensions or not all(math.isfinite(v) for v in values) or not any(values):
+            raise ValueError('Invalid cosine vector')
+        return '[' + ','.join(str(float(v)) for v in values) + ']'
 
-    def upsert(self, strategy: str, chunks: list[Chunk], vectors: list[list[float]]) -> None:
-        """TODO: validate lengths/dimensions and write stable IDs without duplicates.
+    def create_schema(self):
+        with psycopg.connect(self.database_url) as conn:
+            conn.execute(f'CREATE TABLE IF NOT EXISTS thinkpython_chunks (strategy text NOT NULL, chunk_id text NOT NULL, text text NOT NULL, metadata jsonb NOT NULL, embedding vector({self.dimensions}) NOT NULL, PRIMARY KEY(strategy, chunk_id))')
 
-        When re-ingesting changed source documents, remove obsolete chunks too.
-        """
-        raise NotImplementedError("TODO: upsert")
+    def upsert(self, strategy, chunks, vectors):
+        if len(chunks) != len(vectors):
+            raise ValueError('Chunk/vector count mismatch')
+        rows = [(strategy, c.chunk_id, c.text, Jsonb({**c.metadata, 'document_id': c.document_id, 'source': c.source, 'page': c.page}), self.vector(v)) for c,v in zip(chunks,vectors)]
+        # Transactionally replace complete strategy snapshot, including stale chunks.
+        with psycopg.connect(self.database_url) as conn:
+            conn.execute('SELECT pg_advisory_xact_lock(606013)')
+            conn.execute('DELETE FROM thinkpython_chunks WHERE strategy=%s', (strategy,))
+            with conn.cursor() as cur:
+                cur.executemany('INSERT INTO thinkpython_chunks VALUES (%s,%s,%s,%s,%s::vector)', rows)
 
-    def search(self, strategy: str, query_vector: list[float], top_k: int = 3,
-               filters: dict[str, Any] | None = None) -> list[dict[str, Any]]:
-        """TODO: filter permitted metadata in SQL, rank by cosine distance, return top-k.
+    def count(self, strategy):
+        with psycopg.connect(self.database_url) as conn:
+            return conn.execute('SELECT count(*) FROM thinkpython_chunks WHERE strategy=%s', (strategy,)).fetchone()[0]
 
-        Return chunk ID, text, score and metadata. Parameterize user-supplied values.
-        """
-        raise NotImplementedError("TODO: search")
+    def search(self, strategy, query_vector, top_k=3, filters=None):
+        filters = filters or {}
+        if set(filters)-{'chapter','language','version'}:
+            raise ValueError('Unsupported metadata filter')
+        if top_k < 1:
+            raise ValueError('top_k must be positive')
+        with psycopg.connect(self.database_url) as conn:
+            rows = conn.execute('SELECT chunk_id,text,metadata,1-(embedding <=> %s::vector) FROM thinkpython_chunks WHERE strategy=%s AND metadata @> %s ORDER BY embedding <=> %s::vector,chunk_id LIMIT %s', (self.vector(query_vector),strategy,Jsonb(filters),self.vector(query_vector),top_k)).fetchall()
+        return [dict(chunk_id=r[0],text=r[1],metadata=r[2],score=r[3]) for r in rows]

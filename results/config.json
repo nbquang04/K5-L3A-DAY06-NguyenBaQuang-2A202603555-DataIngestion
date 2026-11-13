@@ -1,0 +1,13 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "metric": "cosine",
+  "search": "exact",
+  "A": {
+    "size": 500,
+    "overlap": 50
+  },
+  "B": {
+    "max_size": 1000
+  },
+  "C": "B plus supplied chapter filter"
+}

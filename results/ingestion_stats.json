@@ -1,0 +1,26 @@
+[
+  {
+    "strategy": "A",
+    "chunk_count": 243,
+    "total_characters": 110179,
+    "min_characters": 65,
+    "max_characters": 500,
+    "mean_characters": 453.4115226337449,
+    "embedding_and_two_writes_seconds": 6.991045400005532,
+    "reingestion_count": 243,
+    "total_tokens": 27684,
+    "truncated_chunks": 0
+  },
+  {
+    "strategy": "B",
+    "chunk_count": 145,
+    "total_characters": 100529,
+    "min_characters": 95,
+    "max_characters": 998,
+    "mean_characters": 693.303448275862,
+    "embedding_and_two_writes_seconds": 9.798267199992551,
+    "reingestion_count": 145,
+    "total_tokens": 24866,
+    "truncated_chunks": 14
+  }
+]

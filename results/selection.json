@@ -1,0 +1,8 @@
+{
+  "strategy": "C",
+  "config_hash": "683331e34f4859b94c3c2076322b88adc1ae79b8434f7849edfb77bd786b46e8",
+  "benchmark_hash": "f280f6ee8c4aaaaa2dd07532eeaf3fd81dc8309ea92308d2a0fd7d6a1f3736a6",
+  "selected_at": "2026-11-13T10:37:34.623702+00:00",
+  "rule": "Maximize dev exact-evidence Hit@3, then Hit@1, then lower chunk count; alphabetical tie-break. Freeze before test.",
+  "test_used": false
+}

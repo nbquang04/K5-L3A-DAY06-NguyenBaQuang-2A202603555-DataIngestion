@@ -1,0 +1,62 @@
+{
+  "reviewer": "Quảng",
+  "method": "AI qualitative reading of all sampled chunks and test top-3; independent deterministic PDF metadata checks; no human review claimed.",
+  "reviewed_at": "2026-11-13",
+  "limitations": "AI proposed the labels after seeing retrieval scores; reviewer confirmed them in conversation. This is not a blind or independent assessment. Source comparison used extracted PDF text, not visual inspection.",
+  "strategies": [
+    {
+      "strategy": "A",
+      "coherence_mean": 1.0,
+      "coherence_positions": 10,
+      "coherence_rows": 11,
+      "metadata_correct": 15,
+      "metadata_total": 15,
+      "filter_compliant_queries": 1,
+      "filter_queries": 1,
+      "grounding_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 3
+      },
+      "grounding_mean": 1.6,
+      "grounding_n": 5
+    },
+    {
+      "strategy": "B",
+      "coherence_mean": 1.6,
+      "coherence_positions": 10,
+      "coherence_rows": 10,
+      "metadata_correct": 15,
+      "metadata_total": 15,
+      "filter_compliant_queries": 1,
+      "filter_queries": 1,
+      "grounding_counts": {
+        "0": 1,
+        "1": 2,
+        "2": 2
+      },
+      "grounding_mean": 1.2,
+      "grounding_n": 5
+    },
+    {
+      "strategy": "C",
+      "coherence_mean": 1.6,
+      "coherence_positions": 10,
+      "coherence_rows": 10,
+      "metadata_correct": 15,
+      "metadata_total": 15,
+      "filter_compliant_queries": 1,
+      "filter_queries": 1,
+      "grounding_counts": {
+        "0": 1,
+        "1": 2,
+        "2": 2
+      },
+      "grounding_mean": 1.2,
+      "grounding_n": 5
+    }
+  ],
+  "label_author": "Codex AI",
+  "review_status": "Confirmed by reviewer",
+  "confirmed_at": "2026-11-13T11:41:26.749270+00:00"
+}

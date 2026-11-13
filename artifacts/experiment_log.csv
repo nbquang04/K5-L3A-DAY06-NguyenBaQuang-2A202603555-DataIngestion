@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed,500,50,document_id/source/page/chapter/version/language,none,sentence-transformers/all-MiniLM-L6-v2,Fixed baseline may fragment evidence.,0.3333333333333333,0.6666666666666666,0.6,0.6,Actual run; human audits pending. C shares B vectors. Hypothesis recorded retrospectively; selection protocol frozen before test.
+B,paragraph,1000,0,document_id/source/page/chapter/version/language,none,sentence-transformers/all-MiniLM-L6-v2,Paragraph boundaries preserve evidence; chapter filter limits irrelevant scope.,0.4666666666666667,0.8666666666666667,0.2,0.4,Actual run; human audits pending. C shares B vectors. Hypothesis recorded retrospectively; selection protocol frozen before test.
+C,paragraph,1000,0,document_id/source/page/chapter/version/language,chapter when supplied,sentence-transformers/all-MiniLM-L6-v2,Paragraph boundaries preserve evidence; chapter filter limits irrelevant scope.,0.5333333333333333,0.8666666666666667,0.2,0.4,Actual run; human audits pending. C shares B vectors. Hypothesis recorded retrospectively; selection protocol frozen before test.

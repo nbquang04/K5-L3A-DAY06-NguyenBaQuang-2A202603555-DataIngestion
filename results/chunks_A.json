@@ -1,0 +1,3404 @@
+[
+  {
+    "chunk_id": "b71bf4953ff912484f1b3d70",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 93,
+    "text": "Chapter 8\n\nStrings\n\nStrings are not like integers, floats, and booleans. A string is asequence, which means it is\nan ordered collection of other values. In this chapter you’ll see how to access the characters\nthat make up a string, and you’ll learn about some of the methods strings provide.\n\n8.1    A string is a sequence\n\nA string is a sequence of characters.  You can access the characters one at a time with the\nbracket operator:\n>>>  fruit  ='banana'\n>>>  letter  =  fruit[1]\nThe second statemen",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "cb75958afdf2d1d1aec035d7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 93,
+    "text": "nana'\n>>>  letter  =  fruit[1]\nThe second statement selects character number 1 fromfruitand assigns it toletter.\nThe expression in brackets is called anindex.  The index indicates which character in the\nsequence you want (hence the name).\n\nBut you might not get what you expect:\n>>>  letter\n'a'\nFor most people, the first letter of'banana'isb, nota.  But for computer scientists, the\nindex is an offset from the beginning of the string, and the offset of the first letter is zero.\n>>>  letter  =  fru",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "0359d954d38363dbf03a4c07",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 93,
+    "text": "t of the first letter is zero.\n>>>  letter  =  fruit[0]\n>>>  letter\n'b'\nSobis the 0th letter (“zero-eth”) of'banana',ais the 1th letter (“one-eth”), andnis the 2th\nletter (“two-eth”).\nAs an index you can use an expression that contains variables and operators:\n>>>  i  =  1\n>>>  fruit[i]\n'a'\n>>>  fruit[i+1]\n'n'",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1211
+    }
+  },
+  {
+    "chunk_id": "13de64906f33033dddb84d3e",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 94,
+    "text": "72                                                                                                                          Chapter 8. Strings\n\nBut the value of the index has to be an integer. Otherwise you get:\n>>>  letter  =  fruit[1.5]\nTypeError:  string  indices  must  be  integers\n\n8.2len\n\nlenis a built-in function that returns the number of characters in a string:\n>>>  fruit  ='banana'\n>>>  len(fruit)\n6\nTo get the last letter of a string, you might be tempted to try something like this:\n>>",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "cdf01041812c3ddde9c6c2ba",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 94,
+    "text": "ou might be tempted to try something like this:\n>>>  length  =  len(fruit)\n>>>  last  =  fruit[length]\nIndexError:  string  index  out  of  range\nThe reason for theIndexErroris that there is no letter in’banana’with the index 6. Since\nwe started counting at zero, the six letters are numbered 0 to 5.  To get the last character,\nyou have to subtract 1 fromlength:\n>>>  last  =  fruit[length-1]\n>>>  last\n'a'\nOr you can use negative indices, which count backward from the end of the string.  The\nexpre",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "e49cb1b0d029aaf2cb8baf75",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 94,
+    "text": "nt backward from the end of the string.  The\nexpressionfruit[-1]yields the last letter,fruit[-2]yields the second to last, and so on.\n\n8.3    Traversal with aforloop\n\nA lot of computations involve processing a string one character at a time. Often they start\nat the beginning, select each character in turn, do something to it, and continue until the\nend. This pattern of processing is called atraversal. One way to write a traversal is with a\nwhileloop:\nindex  =  0\nwhile  index  <  len(fruit):\n    ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "41bc10f26561381d9f3d97be",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 94,
+    "text": "oop:\nindex  =  0\nwhile  index  <  len(fruit):\n      letter  =  fruit[index]\n      print(letter)\n      index  =  index  +  1\nThis loop traverses the string and displays each letter on a line by itself. The loop condition\nisindex  <  len(fruit), so whenindexis equal to the length of the string, the condition is\nfalse, and the body of the loop doesn’t run. The last character accessed is the one with the\nindexlen(fruit)-1, which is the last character in the string.\n\nAs an exercise, write a function ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "c12301433a7c9c7fa65fce64",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 94,
+    "text": " in the string.\n\nAs an exercise, write a function that takes a string as an argument and displays the letters\nbackward, one per line.\n\nAnother way to write a traversal is with aforloop:\nfor  letter  in  fruit:\n      print(letter)",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2029
+    }
+  },
+  {
+    "chunk_id": "5b0cfe6825bf45ae85bba0e9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 95,
+    "text": "8.4. String slices                                                                                                                              73\n\n                                           Figure 8.1: Slice indices.\n\nEach  time  through  the  loop,  the  next  character  in  the  string  is  assigned  to  the  variable\nletter. The loop continues until no characters are left.\n\nThe following example shows how to use concatenation (string addition) and aforloop\nto generate an abecedarian series (",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "347a033278f4e6ced575b7cc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 95,
+    "text": ") and aforloop\nto generate an abecedarian series (that is, in alphabetical order).  In Robert McCloskey’s\nbookMake Way for Ducklings, the names of the ducklings are Jack, Kack, Lack, Mack, Nack,\nOuack, Pack, and Quack. This loop outputs these names in order:\nprefixes  ='JKLMNOPQ'\nsuffix  ='ack'\n\nfor  letter  in  prefixes:\n      print(letter  +  suffix)\nThe output is:\nJack\nKack\nLack\nMack\nNack\nOack\nPack\nQack\nOf  course,  that’s  not  quite  right  because  “Ouack”  and  “Quack”  are  misspelled.  ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "410d67291c017ac6ecbb44bc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 95,
+    "text": "because  “Ouack”  and  “Quack”  are  misspelled.   As  an\nexercise, modify the program to fix this error.\n\n8.4    String slices\n\nA segment of a string is called aslice. Selecting a slice is similar to selecting a character:\n>>>  s  ='Monty  Python'\n>>>  s[0:5]\n'Monty'\n>>>  s[6:12]\n'Python'\nThe operator[n:m]returns the part of the string from the “n-eth” character to the “m-eth”\ncharacter, including the first but excluding the last.  This behavior is counterintuitive, but\nit might help to imagine",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "a13e5e838ce30980c7b0ae09",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 95,
+    "text": " is counterintuitive, but\nit might help to imagine the indices pointingbetweenthe characters, as in Figure 8.1.\n\nIf you omit the first index (before the colon), the slice starts at the beginning of the string.\nIf you omit the second index, the slice goes to the end of the string:\n>>>  fruit  ='banana'\n>>>  fruit[:3]",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1667
+    }
+  },
+  {
+    "chunk_id": "6e0e64d96ee9ecb228b898f6",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 96,
+    "text": "74                                                                                                                          Chapter 8. Strings\n\n'ban'\n>>>  fruit[3:]\n'ana'\nIf the first index is greater than or equal to the second the result is anempty string, repre-\nsented by two quotation marks:\n>>>  fruit  ='banana'\n>>>  fruit[3:3]\n''\nAn empty string contains no characters and has length 0, but other than that, it is the same\nas any other string.\n\nContinuing this example, what do you thinkfruit",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "71d9281d5b05bf1834ee411b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 96,
+    "text": ".\n\nContinuing this example, what do you thinkfruit[:]means? Try it and see.\n\n8.5    Strings are immutable\n\nIt is tempting to use the[]operator on the left side of an assignment, with the intention of\nchanging a character in a string. For example:\n>>>  greeting  ='Hello,  world!'\n>>>  greeting[0]  ='J'\nTypeError:'str'object  does  not  support  item  assignment\nThe “object” in this case is the string and the “item” is the character you tried to assign.\nFor  now,  an  object  is  the  same  thing ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "e930c0b34800024e04218177",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 96,
+    "text": "sign.\nFor  now,  an  object  is  the  same  thing  as  a  value,  but  we  will  refine  that  definition  later\n(Section 10.10).\n\nThe reason for the error is that strings areimmutable, which means you can’t change an\nexisting string. The best you can do is create a new string that is a variation on the original:\n>>>  greeting  ='Hello,  world!'\n>>>  new_greeting  ='J'+  greeting[1:]\n>>>  new_greeting\n'Jello,  world!'\nThis example concatenates a new first letter onto a slice ofgreeting. It has n",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "af49f684c51063acc6ccc7cf",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 96,
+    "text": "new first letter onto a slice ofgreeting. It has no effect on the\noriginal string.\n\n8.6    Searching\n\nWhat does the following function do?\ndef  find(word,  letter):\n      index  =  0\n      while  index  <  len(word):\n            if  word[index]  ==  letter:\n                  return  index\n            index  =  index  +  1\n      return  -1",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1690
+    }
+  },
+  {
+    "chunk_id": "da97030da0963aa261742359",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 97,
+    "text": "8.7. Looping and counting                                                                                                            75\n\nIn a sense,findis the inverse of the[]operator. Instead of taking an index and extracting\nthe corresponding character, it takes a character and finds the index where that character\nappears. If the character is not found, the function returns-1.\n\nThis is the first example we have seen of areturnstatement inside a loop. Ifword[index]\n==  letter, the function brea",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "6b7f28b146398d02debf30d0",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 97,
+    "text": " loop. Ifword[index]\n==  letter, the function breaks out of the loop and returns immediately.\n\nIf the character doesn’t appear in the string, the program exits the loop normally and re-\nturns-1.\n\nThis pattern of computation—traversing a sequence and returning when we find what we\nare looking for—is called asearch.\n\nAs an exercise, modifyfindso that it has a third parameter, the index inwordwhere it\nshould start looking.\n\n8.7    Looping and counting\n\nThe following program counts the number of tim",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "bc4290f02e393fe8ef884182",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 97,
+    "text": "ng\n\nThe following program counts the number of times the letteraappears in a string:\nword  ='banana'\ncount  =  0\nfor  letter  in  word:\n      if  letter  =='a':\n            count  =  count  +  1\nprint(count)\nThis program demonstrates another pattern of computation called acounter. The variable\ncountis initialized to 0 and then incremented each time anais found. When the loop exits,\ncountcontains the result—the total number ofa’s.\n\nAs an exercise, encapsulate this code in a function namedcount, a",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "eb1b7be9b4fca3572ff0c2cb",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 97,
+    "text": " encapsulate this code in a function namedcount, and generalize it so that\nit accepts the string and the letter as arguments.\n\nThen  rewrite  the  function  so  that  instead  of  traversing  the  string,  it  uses  the  three-\nparameter version offindfrom the previous section.\n\n8.8    String methods\n\nStrings provide methods that perform a variety of useful operations.  A method is similar\nto  a function—it  takes arguments  and returns  a value—but  the syntax  is different.   For\nexample,  the",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "0f54ea5d3e42fbab95ae5ef1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 97,
+    "text": "but  the syntax  is different.   For\nexample,  the  methoduppertakes  a  string  and  returns  a  new  string  with  all  uppercase\nletters.\n\nInstead of the function syntaxupper(word), it uses the method syntaxword.upper().\n>>>  word  ='banana'\n>>>  new_word  =  word.upper()\n>>>  new_word\n'BANANA'",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2098
+    }
+  },
+  {
+    "chunk_id": "0c9bd62fb95c4f59c4ca2f39",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 98,
+    "text": "76                                                                                                                          Chapter 8. Strings\n\nThis form of dot notation specifies the name of the method,upper, and the name of the\nstring  to  apply  the  method  to,word.   The  empty  parentheses  indicate  that  this  method\ntakes no arguments.\n\nA method call is called aninvocation;  in this case,  we would say that we are invoking\nupperonword.\nAs  it  turns  out,  there  is  a  string  method  ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "fcab76c0d8885c8c0d05d0f4",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 98,
+    "text": "s  it  turns  out,  there  is  a  string  method  namedfindthat  is  remarkably  similar  to  the\nfunction we wrote:\n>>>  word  ='banana'\n>>>  index  =  word.find('a')\n>>>  index\n1\nIn this example, we invokefindonwordand pass the letter we are looking for as a param-\neter.\n\nActually, thefindmethod is more general than our function; it can find substrings, not just\ncharacters:\n>>>  word.find('na')\n2\nBy default,findstarts at the beginning of the string, but it can take a second argument, the\nindex",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "dbd6c52ddda812cf94db94cd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 98,
+    "text": "ring, but it can take a second argument, the\nindex where it should start:\n>>>  word.find('na',  3)\n4\nThis is an example of anoptional argument;findcan also take a third argument, the index\nwhere it should stop:\n>>>  name  ='bob'\n>>>  name.find('b',  1,  2)\n-1\nThis search fails becausebdoes not appear in the index range from1to2, not including2.\nSearching up to, but not including, the second index makesfindconsistent with the slice\noperator.\n\n8.9    Theinoperator\n\nThe wordinis a boolean operator ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "240760df4c3a1cab175b5050",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 98,
+    "text": "   Theinoperator\n\nThe wordinis a boolean operator that takes two strings and returnsTrueif the first ap-\npears as a substring in the second:\n>>>'a'in'banana'\nTrue\n>>>'seed'in'banana'\nFalse\nFor example, the following function prints all the letters fromword1that also appear in\nword2:\ndef  in_both(word1,  word2):\n      for  letter  in  word1:\n            if  letter  in  word2:\n                  print(letter)",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1759
+    }
+  },
+  {
+    "chunk_id": "1263608a26bf3023245ac420",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 99,
+    "text": "8.10. String comparison                                                                                                                77\n\nWith well-chosen variable names, Python sometimes reads like English.  You could read\nthis loop, “for (each) letter in (the first) word, if (the) letter (appears) in (the second) word,\nprint (the) letter.”\n\nHere’s what you get if you compare apples and oranges:\n>>>  in_both('apples','oranges')\na\ne\ns\n\n8.10    String comparison\n\nThe relational operators work on",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "4706e0aa031e343b563c88f8",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 99,
+    "text": "tring comparison\n\nThe relational operators work on strings. To see if two strings are equal:\nif  word  =='banana':\n      print('All  right,  bananas.')\nOther relational operations are useful for putting words in alphabetical order:\nif  word  <'banana':\n      print('Your  word,'+  word  +',  comes  before  banana.')\nelif  word  >'banana':\n      print('Your  word,'+  word  +',  comes  after  banana.')\nelse:\n      print('All  right,  bananas.')\nPython does not handle uppercase and lowercase letters",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "4afac3bf3af7a15397ea83d4",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 99,
+    "text": "on does not handle uppercase and lowercase letters the same way people do.  All the\nuppercase letters come before all the lowercase letters, so:\nYour  word,  Pineapple,  comes  before  banana.\nA common way to address this problem is to convert strings to a standard format, such as\nall lowercase, before performing the comparison.  Keep that in mind in case you have to\ndefend yourself against a man armed with a Pineapple.\n\n8.11    Debugging\n\nWhen you use indices to traverse the values in a sequenc",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "64c19b54cc85d5c8ed7d2ed1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 99,
+    "text": "ou use indices to traverse the values in a sequence, it is tricky to get the beginning\nand end of the traversal right.  Here is a function that is supposed to compare two words\nand returnTrueif one of the words is the reverse of the other, but it contains two errors:\ndef  is_reverse(word1,  word2):\n      if  len(word1)  !=  len(word2):\n            return  False\n\n      i  =  0\n      j  =  len(word2)\n\n      while  j  >  0:\n            if  word1[i]  !=  word2[j]:\n                  return  False\n   ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "72ad97d67489336b0e5778ab",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 99,
+    "text": " !=  word2[j]:\n                  return  False\n            i  =  i+1",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 1868
+    }
+  },
+  {
+    "chunk_id": "ce1535f789d7b5a700ec9d7d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 100,
+    "text": "78                                                                                                                          Chapter 8. Strings\n\n            j  =  j-1\n\n      return  True\nThe firstifstatement checks whether the words are the same length. If not, we can return\nFalseimmediately.  Otherwise, for the rest of the function, we can assume that the words\nare the same length. This is an example of the guardian pattern in Section 6.8.\niandjare indices:itraversesword1forward whilejtraversesw",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "ccc7ccc36258a60fe25b7f9b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 100,
+    "text": "re indices:itraversesword1forward whilejtraversesword2backward.  If we\nfind two letters that don’t match, we can returnFalseimmediately.  If we get through the\nwhole loop and all the letters match, we returnTrue.\nIf we test this function with the words “pots” and “stop”, we expect the return valueTrue,\nbut we get an IndexError:\n>>>  is_reverse(','stop'pots')\n...\n   File  \"reverse.py\",  line  15,  in  is_reverse\n      if  word1[i]  !=  word2[j]:\nIndexError:  string  index  out  of  range\nFor debu",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "d000a39ff2f8727fffa84fa0",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 100,
+    "text": "ndexError:  string  index  out  of  range\nFor debugging this kind of error, my first move is to print the values of the indices imme-\ndiately before the line where the error appears.\n      while  j  >  0:\n            print(i,  j)                #  print  here\n\n            if  word1[i]  !=  word2[j]:\n                  return  False\n            i  =  i+1\n            j  =  j-1\nNow when I run the program again, I get more information:\n>>>  is_reverse(','stop'pots')\n0  4\n...\nIndexError:  string  inde",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "0c62bf857b03315b8d6c522b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 100,
+    "text": "(','stop'pots')\n0  4\n...\nIndexError:  string  index  out  of  range\nThe  first  time  through  the  loop,  the  value  ofjis  4,  which  is  out  of  range  for  the\nstring'pots'.   The  index  of  the  last  character  is  3,  so  the  initial  value  forjshould  be\nlen(word2)-1.\nIf I fix that error and run the program again, I get:\n>>>  is_reverse(','stop'pots')\n0  3\n1  2\n2  1\nTrue\nThis time we get the right answer, but it looks like the loop only ran three times, which is\nsuspicious.  To get ",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "984f802ff6efc94f37559b7a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 100,
+    "text": "nly ran three times, which is\nsuspicious.  To get a better idea of what is happening, it is useful to draw a state diagram.\nDuring the first iteration, the frame foris_reverseis shown in Figure 8.2.\nI took some license by arranging the variables in the frame and adding dotted lines to show\nthat the values ofiandjindicate characters inword1andword2.\nStarting  with  this  diagram,  run  the  program  on  paper,  changing  the  values  ofiandj\nduring each iteration. Find and fix the second error in",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "3b5e7f7b14e790c41d2125d0",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 100,
+    "text": "g each iteration. Find and fix the second error in this function.",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2315
+    }
+  },
+  {
+    "chunk_id": "ae5d2879ffd8fa0a179de5df",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 101,
+    "text": "8.12. Glossary                                                                                                                                  79\n\n                                          Figure 8.2: State diagram.\n\n8.12    Glossary\n\nobject:Something  a  variable  can  refer  to.   For  now,  you  can  use  “object”  and  “value”\n       interchangeably.\nsequence:An ordered collection of values where each value is identified by an integer\n       index.\n\nitem:One of the values in a sequence.\n\nin",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "ec14904ddd3f05f1e6591407",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 101,
+    "text": " index.\n\nitem:One of the values in a sequence.\n\nindex:An integer value used to select an item in a sequence, such as a character in a string.\n       In Python indices start from 0.\nslice:A part of a string specified by a range of indices.\n\nempty string:A  string  with  no  characters  and  length  0,  represented  by  two  quotation\n       marks.\n\nimmutable:The property of a sequence whose items cannot be changed.\ntraverse:To iterate through the items in a sequence,  performing a similar operati",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "cac6758623d1ff71189b033b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 101,
+    "text": "items in a sequence,  performing a similar operation on\n       each.\n\nsearch:A pattern of traversal that stops when it finds what it is looking for.\n\ncounter:A variable used to count something, usually initialized to zero and then incre-\n       mented.\ninvocation:A statement that calls a method.\n\noptional argument:A function or method argument that is not required.\n\n8.13    Exercises\n\nExercise 8.1.Read the documentation of the string methods athttp: // docs. python. org/ 3/\nlibrary/ stdtypes. ht",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "6596fd8cccd1505e1a424d13",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 101,
+    "text": "tp: // docs. python. org/ 3/\nlibrary/ stdtypes. html# string-methods. You might want to experiment with some of them\nto make sure you understand how they work.stripandreplaceare particularly useful.\nThe    documentation    uses    a    syntax    that    might    be    confusing.          For    example,     in\nfind(sub[,  start[,  end]]), the brackets indicate optional arguments. Sosubis required, but\nstartis optional, and if you includestart, thenendis optional.\nExercise 8.2.There is a string m",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "e4bde46a6f92151e88bd8545",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 101,
+    "text": "enendis optional.\nExercise 8.2.There is a string method calledcountthat is similar to the function in Section 8.7.\nRead the documentation of this method and write an invocation that counts the number ofa’s in\n'banana'.\nExercise 8.3.A string slice can take a third index that specifies the “step size”; that is, the number\nof spaces between successive characters. A step size of 2 means every other character; 3 means every\nthird, etc.",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2234
+    }
+  },
+  {
+    "chunk_id": "b453b4c537e91efc63667489",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 102,
+    "text": "80                                                                                                                          Chapter 8. Strings\n\n>>>  fruit  ='banana'\n>>>  fruit[0:5:2]\n'bnn'\nA step size of -1 goes through the word backwards, so the slice[::-1]generates a reversed string.\n\nUse this idiom to write a one-line version ofis_palindromefrom Exercise 6.3.\nExercise 8.4.The following functions are allintendedto check whether a string contains any\nlowercase letters, but at least some of the",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "580bb8d0151814b31887f2a7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 102,
+    "text": "ns any\nlowercase letters, but at least some of them are wrong. For each function, describe what the function\nactually does (assuming that the parameter is a string).\ndef  any_lowercase1(s):\n      for  c  in  s:\n            if  c.islower():\n                   return  True\n            else:\n                   return  False\n\ndef  any_lowercase2(s):\n      for  c  in  s:\n            if'c'.islower():\n                   return'True'\n            else:\n                   return'False'\n\ndef  any_lowercase",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "fea0a9227170ba0fcafb07c1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 102,
+    "text": "                 return'False'\n\ndef  any_lowercase3(s):\n      for  c  in  s:\n            flag  =  c.islower()\n      return  flag\n\ndef  any_lowercase4(s):\n      flag  =  False\n      for  c  in  s:\n            flag  =  flag  or  c.islower()\n      return  flag\n\ndef  any_lowercase5(s):\n      for  c  in  s:\n            if  not  c.islower():\n                   return  False\n      return  True\nExercise 8.5.A Caesar cypher is a weak form of encryption that involves “rotating” each letter by\na fixed numb",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "74528ec95ed14c2489615a89",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 102,
+    "text": "at involves “rotating” each letter by\na fixed number of places. To rotate a letter means to shift it through the alphabet, wrapping around\nto the beginning if necessary, so ’A’ rotated by 3 is ’D’ and ’Z’ rotated by 1 is ’A’.\n\nTo rotate a word, rotate each letter by the same amount. For example, “cheer” rotated by 7 is “jolly”\nand “melon” rotated by -10 is “cubed”.  In the movie2001: A Space Odyssey, the ship computer\nis called HAL, which is IBM rotated by -1.\n\nWrite a function calledrotate_word",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "3c196478dc3f745b26c2582a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 102,
+    "text": "rotated by -1.\n\nWrite a function calledrotate_wordthat takes a string and an integer as parameters, and returns\na new string that contains the letters from the original string rotated by the given amount.\n\nYou might want to use the built-in functionord, which converts a character to a numeric code, and",
+    "metadata": {
+      "chapter": "Strings",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2103
+    }
+  },
+  {
+    "chunk_id": "b8de1b8db4f4b4fa8ca6c6dc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 105,
+    "text": "Chapter 9\n\nCase study: word play\n\nThis  chapter  presents  the  second  case  study,  which  involves  solving  word  puzzles  by\nsearching for words that have certain properties. For example, we’ll find the longest palin-\ndromes in English and search for words whose letters appear in alphabetical order.  And\nI will present another program development plan: reduction to a previously solved prob-\nlem.\n\n9.1    Reading word lists\n\nFor the exercises in this chapter we need a list of English words.  ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "45d2cbdaa679f4fe01da5934",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 105,
+    "text": "in this chapter we need a list of English words.  There are lots of word\nlists available on the Web, but the one most suitable for our purpose is one of the word lists\ncollected and contributed to the public domain by Grady Ward as part of the Moby lexi-\ncon project (seehttp://wikipedia.org/wiki/Moby_Project). It is a list of 113,809 official\ncrosswords; that is, words that are considered valid in crossword puzzles and other word\ngames.  In the Moby collection, the filename is113809of.fic; you c",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "d810662c2683d47f7326908b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 105,
+    "text": "oby collection, the filename is113809of.fic; you can download a copy,\nwith the simpler namewords.txt, fromhttps://thinkpython.com/code/words.txt.\nThis file is in plain text, so you can open it with a text editor, but you can also read it from\nPython. The built-in functionopentakes the name of the file as a parameter and returns a\nfile objectyou can use to read the file.\n>>>  fin  =  open('words.txt')\nfinis a common name for a file object used for input.   The file object provides several\nmethods",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "aa7926c4967a778abc61713c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 105,
+    "text": " input.   The file object provides several\nmethods for reading, includingreadline, which reads characters from the file until it gets\nto a newline and returns the result as a string:\n>>>  fin.readline()\n'aa\\n'\nThe  first  word  in  this  particular  list  is  “aa”,  which  is  a  kind  of  lava.   The  sequence\\n\nrepresents the newline character that separates this word from the next.\n\nThe file object keeps track of where it is in the file, so if you callreadlineagain, you get\nthe next word:\n>>>",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "67d3ab9483583d2001d21109",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 105,
+    "text": " you callreadlineagain, you get\nthe next word:\n>>>  fin.readline()\n'aah\\n'",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 1874
+    }
+  },
+  {
+    "chunk_id": "273f57c75b2b0e6afa9e3349",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 106,
+    "text": "84                                                                                               Chapter 9. Case study: word play\n\nThe next word is “aah”, which is a perfectly legitimate word, so stop looking at me like\nthat.   Or,  if it’s the newline character that’s bothering you,  we can get rid of it with the\nstring methodstrip:\n>>>  line  =  fin.readline()\n>>>  word  =  line.strip()\n>>>  word\n'aahed'\nYou can also use a file object as part of aforloop.  This program readswords.txtand\nprints",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "5388e4125f15aa93102cda8c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 106,
+    "text": "f aforloop.  This program readswords.txtand\nprints each word, one per line:\nfin  =  open(')'words.txt\nfor  line  in  fin:\n      word  =  line.strip()\n      print(word)\n\n9.2    Exercises\n\nThere are solutions to these exercises in the next section. You should at least attempt each\none before you read the solutions.\nExercise 9.1.Write a program that readswords.txtand prints only the words with more than 20\ncharacters (not counting whitespace).\nExercise 9.2.In 1939 Ernest Vincent Wright published a ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "a804808fee1625f77c1ea936",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 106,
+    "text": "ise 9.2.In 1939 Ernest Vincent Wright published a 50,000 word novel calledGadsbythat\ndoes not contain the letter “e”.  Since “e” is the most common letter in English, that’s not easy to\ndo.\n\nIn fact, it is difficult to construct a solitary thought without using that most common symbol. It is\nslow going at first, but with caution and hours of training you can gradually gain facility.\n\nAll right, I’ll stop now.\n\nWrite a function calledhas_no_ethat returnsTrueif the given word doesn’t have the lett",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "5b2cea16e0cde8fdd0d8d5ff",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 106,
+    "text": "returnsTrueif the given word doesn’t have the letter “e” in\nit.\n\nWrite a program that readswords.txtand prints only the words that have no “e”.  Compute the\npercentage of words in the list that have no “e”.\nExercise 9.3.Write a function namedavoidsthat takes a word and a string of forbidden letters,\nand that returnsTrueif the word doesn’t use any of the forbidden letters.\n\nWrite a program that prompts the user to enter a string of forbidden letters and then prints the\nnumber of words that don’t ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "a2f5b4a8cdf2415525197bf7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 106,
+    "text": "rs and then prints the\nnumber of words that don’t contain any of them. Can you find a combination of 5 forbidden letters\nthat excludes the smallest number of words?\nExercise 9.4.Write a function nameduses_onlythat takes a word and a string of letters, and\nthat returnsTrueif the word contains only letters in the list. Can you make a sentence using only\nthe lettersacefhlo? Other than “Hoe alfalfa”?\nExercise 9.5.Write a function nameduses_allthat takes a word and a string of required letters,\nand t",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "7863620bdfe1f36531165995",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 106,
+    "text": "kes a word and a string of required letters,\nand that returnsTrueif the word uses all the required letters at least once.  How many words are\nthere that use all the vowelsaeiou? How aboutaeiouy?\nExercise 9.6.Write a function calledis_abecedarianthat returnsTrueif the letters in a word\nappear in alphabetical order (double letters are ok). How many abecedarian words are there?",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2627
+    }
+  },
+  {
+    "chunk_id": "fd4092a0b021b7a9c89716ea",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 107,
+    "text": "9.3. Search                                                                                                                                        85\n9.3    Search\n\nAll of the exercises in the previous section have something in common; they can be solved\nwith the search pattern we saw in Section 8.6. The simplest example is:\ndef  has_no_e(word):\n      for  letter  in  word:\n            if  letter  =='e':\n                  return  False\n      return  True\nTheforloop traverses the characters inwor",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "64077c0960c0581fef16d4c3",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 107,
+    "text": "rn  True\nTheforloop traverses the characters inword. If we find the letter “e”, we can immediately\nreturnFalse; otherwise we have to go to the next letter.  If we exit the loop normally, that\nmeans we didn’t find an “e”, so we returnTrue.\n\nYou could write this function more concisely using theinoperator, but I started with this\nversion because it demonstrates the logic of the search pattern.\navoidsis a more general version ofhas_no_ebut it has the same structure:\ndef  avoids(word,  forbidden):\n ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "d2d7eb3ba5db53f707dba2c3",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 107,
+    "text": "e same structure:\ndef  avoids(word,  forbidden):\n      for  letter  in  word:\n            if  letter  in  forbidden:\n                  return  False\n      return  True\nWe can returnFalseas soon as we find a forbidden letter; if we get to the end of the loop,\nwe returnTrue.\nuses_onlyis similar except that the sense of the condition is reversed:\ndef  uses_only(word,  available):\n      for  letter  in  word:\n            if  letter  not  in  available:\n                  return  False\n      return  T",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "180b8d250b491d274a5b4a5c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 107,
+    "text": "e:\n                  return  False\n      return  True\nInstead of a list of forbidden letters, we have a list of available letters. If we find a letter in\nwordthat is not inavailable, we can returnFalse.\nuses_allis similar except that we reverse the role of the word and the string of letters:\ndef  uses_all(word,  required):\n      for  letter  in  required:\n            if  letter  not  in  word:\n                  return  False\n      return  True\nInstead of traversing the letters inword, the loop t",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "33bff5a73a65346a7354d2e1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 107,
+    "text": "stead of traversing the letters inword, the loop traverses the required letters. If any of the\nrequired letters do not appear in the word, we can returnFalse.\nIf  you  were  really  thinking  like  a  computer  scientist,  you  would  have  recognized  that\nuses_allwas an instance of a previously solved problem, and you would have written:\ndef  uses_all(word,  required):\n      return  uses_only(required,  word)\nThis is an example of a program development plan calledreduction to a previously solv",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "9667cc16b6dd7f61252d6322",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 107,
+    "text": "elopment plan calledreduction to a previously solved\nproblem, which means that you recognize the problem you are working on as an instance\nof a solved problem and apply an existing solution.",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2440
+    }
+  },
+  {
+    "chunk_id": "9e8d1a769cad947d4200ca14",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 108,
+    "text": "86                                                                                               Chapter 9. Case study: word play\n9.4    Looping with indices\n\nI  wrote  the  functions  in  the  previous  section  withforloops  because  I  only  needed  the\ncharacters in the strings; I didn’t have to do anything with the indices.\n\nForis_abecedarianwe have to compare adjacent letters, which is a little tricky with afor\nloop:\ndef  is_abecedarian(word):\n      previous  =  word[0]\n      for  c  in  w",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "df80d22a9d299b4343819f55",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 108,
+    "text": "d):\n      previous  =  word[0]\n      for  c  in  word:\n            if  c  <  previous:\n                  return  False\n            previous  =  c\n      return  True\nAn alternative is to use recursion:\ndef  is_abecedarian(word):\n      if  len(word)  <=  1:\n            return  True\n      if  word[0]  >  word[1]:\n            return  False\n      return  is_abecedarian(word[1:])\nAnother option is to use awhileloop:\ndef  is_abecedarian(word):\n      i  =  0\n      while  i  <  len(word)-1:\n            i",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "e83bf35b6397fec9bddb33e9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 108,
+    "text": "=  0\n      while  i  <  len(word)-1:\n            if  word[i+1]  <  word[i]:\n                  return  False\n            i  =  i+1\n      return  True\nThe loop starts ati=0and ends wheni=len(word)-1. Each time through the loop, it com-\npares  theith  character  (which  you  can  think  of  as  the  current  character)  to  thei+1th\ncharacter (which you can think of as the next).\nIf the next character is less than (alphabetically before) the current one, then we have dis-\ncovered a break in the abe",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "ee645518850eb6722dd61ac7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 108,
+    "text": " one, then we have dis-\ncovered a break in the abecedarian trend, and we returnFalse.\nIf we get to the end of the loop without finding a fault, then the word passes the test.  To\nconvince yourself that the loop ends correctly,  consider an example like'flossy'.   The\nlength of the word is 6, so the last time the loop runs is wheniis 4, which is the index of\nthe second-to-last character.  On the last iteration, it compares the second-to-last character\nto the last, which is what we want.\n\nHere is ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b0cae720b65a6c6030be2e6c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 108,
+    "text": "cter\nto the last, which is what we want.\n\nHere is a version ofis_palindrome(see Exercise 6.3) that uses two indices; one starts at\nthe beginning and goes up; the other starts at the end and goes down.\ndef  is_palindrome(word):\n      i  =  0\n      j  =  len(word)-1\n\n      while  i<j:\n            if  word[i]  !=  word[j]:",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2121
+    }
+  },
+  {
+    "chunk_id": "584fd2d903e0fcd01c7bddbc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 109,
+    "text": "9.5. Debugging                                                                                                                               87\n\n                  return  False\n            i  =  i+1\n            j  =  j-1\n\n      return  True\nOr we could reduce to a previously solved problem and write:\ndef  is_palindrome(word):\n      return  is_reverse(word,  word)\nUsingis_reversefrom Section 8.11.\n\n9.5    Debugging\n\nTesting programs is hard.  The functions in this chapter are relatively easy to t",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "6bac1149a928daca1eb8dd0d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 109,
+    "text": "functions in this chapter are relatively easy to test because\nyou can check the results by hand.  Even so, it is somewhere between difficult and impos-\nsible to choose a set of words that test for all possible errors.\n\nTakinghas_no_eas an example, there are two obvious cases to check: words that have an\n‘e’ should returnFalse,  and words that don’t should returnTrue.  You should have no\ntrouble coming up with one of each.\n\nWithin each case, there are some less obvious subcases.  Among the words ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "c5ac58da815247de6cf78884",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 109,
+    "text": " are some less obvious subcases.  Among the words that have an\n“e”, you should test words with an “e” at the beginning, the end, and somewhere in the\nmiddle.  You should test long words, short words, and very short words, like the empty\nstring.  The empty string is an example of aspecial case, which is one of the non-obvious\ncases where errors often lurk.\n\nIn addition to the test cases you generate, you can also test your program with a word list\nlikewords.txt.  By scanning the output, you might",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "60c6a129a7388796341ce3ea",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 109,
+    "text": "\nlikewords.txt.  By scanning the output, you might be able to catch errors, but be careful:\nyou might catch one kind of error (words that should not be included, but are) and not\nanother (words that should be included, but aren’t).\n\nIn  general,  testing  can  help  you  find  bugs,  but  it  is  not  easy  to  generate  a  good  set  of\ntest cases, and even if you do, you can’t be sure your program is correct.  According to a\nlegendary computer scientist:\n\n       Program testing can be used to ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "1abbf405f87a3ca7eff62a13",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 109,
+    "text": "scientist:\n\n       Program testing can be used to show the presence of bugs, but never to show\n       their absence!\n       — Edsger W. Dijkstra\n\n9.6    Glossary\n\nfile object:A value that represents an open file.\n\nreduction to a previously solved problem:A way of solving a problem by expressing it\n       as an instance of a previously solved problem.\n\nspecial case:A test case that is atypical or non-obvious (and less likely to be handled cor-\n       rectly).",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2262
+    }
+  },
+  {
+    "chunk_id": "dff3698e2da9e04f312ddd3d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "88                                                                                               Chapter 9. Case study: word play\n9.7    Exercises\n\nExercise 9.7.This question is based on a Puzzler that was broadcast on the radio programCar\nTalk(http: // www. cartalk. com/ content/ puzzlers):\n\n       Give me a word with three consecutive double letters.  I’ll give you a couple of words\n       that almost qualify, but don’t.  For example, the word committee, c-o-m-m-i-t-t-e-e.  It\n       would be ",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "361433a8c1922fd92db36a72",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "committee, c-o-m-m-i-t-t-e-e.  It\n       would be great except for the ‘i’ that sneaks in there.  Or Mississippi:  M-i-s-s-i-s-s-i-\n       p-p-i.  If you could take out those i’s it would work.  But there is a word that has three\n       consecutive pairs of letters and to the best of my knowledge this may be the only word.\n       Of course there are probably 500 more but I can only think of one. What is the word?\n\nWrite a program to find it. Solution:https: // thinkpython. com/ code/ cartalk1. p",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "b46d52bd719b2b0a25f6b0d1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "tion:https: // thinkpython. com/ code/ cartalk1. py.\nExercise   9.8.Here’s   anotherCar   TalkPuzzler   (http: // www. cartalk. com/ content/\npuzzlers):\n\n       “I was driving on the highway the other day and I happened to notice my odometer.\n       Like most odometers, it shows six digits, in whole miles only. So, if my car had 300,000\n       miles, for example, I’d see 3-0-0-0-0-0.\n       “Now, what I saw that day was very interesting.  I noticed that the last 4 digits were\n       palindromic;",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "2ae36d820b0451842d43bbef",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "ed that the last 4 digits were\n       palindromic; that is, they read the same forward as backward. For example, 5-4-4-5 is a\n       palindrome, so my odometer could have read 3-1-5-4-4-5.\n       “One mile later, the last 5 numbers were palindromic. For example, it could have read\n       3-6-5-4-5-6. One mile after that, the middle 4 out of 6 numbers were palindromic. And\n       you ready for this? One mile later, all 6 were palindromic!\n       “The question is, what was on the odometer when I f",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "207f8c6de885d5923c032d83",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "The question is, what was on the odometer when I first looked?”\n\nWrite a Python program that tests all the six-digit numbers and prints any numbers that satisfy\nthese requirements. Solution:https: // thinkpython. com/ code/ cartalk2. py.\nExercise  9.9.Here’s  anotherCar  TalkPuzzler  you  can  solve  with  a  search  (http: // www.\ncartalk. com/ content/ puzzlers):\n\n       “Recently I had a visit with my mom and we realized that the two digits that make\n       up my age when reversed resulted in",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "22cf720f4df44121c231a2b5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "at make\n       up my age when reversed resulted in her age.  For example, if she’s 73, I’m 37.  We\n       wondered how often this has happened over the years but we got sidetracked with other\n       topics and we never came up with an answer.\n       “When I got home I figured out that the digits of our ages have been reversible six times\n       so far.  I also figured out that if we’re lucky it would happen again in a few years, and\n       if we’re really lucky it would happen one more time afte",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2750
+    }
+  },
+  {
+    "chunk_id": "4e0423ae56af76cba928c1bb",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 110,
+    "text": "re really lucky it would happen one more time after that. In other words, it would\n       have happened 8 times over all. So the question is, how old am I now?”\n\nWrite a Python program that searches for solutions to this Puzzler. Hint: you might find the string\nmethodzfilluseful.\n\nSolution:https: // thinkpython. com/ code/ cartalk3. py.",
+    "metadata": {
+      "chapter": "Word play",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2700,
+      "end": 3038
+    }
+  },
+  {
+    "chunk_id": "b9ad26e9fdac2d9c44e10897",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 111,
+    "text": "Chapter 10\n\nLists\n\nThis chapter presents one of Python’s most useful built-in types, lists.  You will also learn\nmore about objects and what can happen when you have more than one name for the same\nobject.\n\n10.1    A list is a sequence\n\nLike a string, alistis a sequence of values.  In a string, the values are characters; in a list,\nthey can be any type. The values in a list are calledelementsor sometimesitems.\n\nThere are several ways to create a new list; the simplest is to enclose the elements ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "b250d6b595394df86ad4a442",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 111,
+    "text": "new list; the simplest is to enclose the elements in square\nbrackets ([and]):\n[10,  20,  30,  40]\n['crunchy  frog','ram  bladder','lark  vomit']\nThe first example is a list of four integers. The second is a list of three strings. The elements\nof a list don’t have to be the same type.  The following list contains a string,  a float,  an\ninteger, and (lo!) another list:\n\n['spam',  2.0,  5,  [10,  20]]\nA list within another list isnested.\n\nA list that contains no elements is called an empty list;  ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "df80d3afcd0e8baa4b6faafc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 111,
+    "text": "at contains no elements is called an empty list;  you can create one with empty\nbrackets,[].\n\nAs you might expect, you can assign list values to variables:\n>>>  cheeses  =  ['Cheddar','Edam','Gouda']\n>>>  numbers  =  [42,  123]\n>>>  empty  =  []\n>>>  print(cheeses,  numbers,  empty)\n['Cheddar','Edam','Gouda']  [42,  123]  []",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1226
+    }
+  },
+  {
+    "chunk_id": "4fd1acd99d1a2c7bf50ab7e2",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 112,
+    "text": "90                                                                                                                             Chapter 10. Lists\n\n                                         Figure 10.1: State diagram.\n\n10.2    Lists are mutable\n\nThe syntax for accessing the elements of a list is the same as for accessing the characters\nof a string—the bracket operator.  The expression inside the brackets specifies the index.\nRemember that the indices start at 0:\n>>>  cheeses[0]\n'Cheddar'\nUnlike str",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "4f0f8843af544cab022f5e42",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 112,
+    "text": "s start at 0:\n>>>  cheeses[0]\n'Cheddar'\nUnlike strings, lists are mutable.  When the bracket operator appears on the left side of an\nassignment, it identifies the element of the list that will be assigned.\n>>>  numbers  =  [42,  123]\n>>>  numbers[1]  =  5\n>>>  numbers\n[42,  5]\nThe one-eth element ofnumbers, which used to be 123, is now 5.\nFigure 10.1 shows the state diagram forcheeses,numbersandempty.\nLists are represented by boxes with the word “list” outside and the elements of the list\ninside",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "b7b113f706731aef01995f77",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 112,
+    "text": "“list” outside and the elements of the list\ninside.cheesesrefers to a list with three elements indexed 0, 1 and 2.numberscontains\ntwo elements; the diagram shows that the value of the second element has been reassigned\nfrom 123 to 5.emptyrefers to a list with no elements.\nList indices work the same way as string indices:\n    •  Any integer expression can be used as an index.\n    •  If you try to read or write an element that does not exist, you get anIndexError.\n    •  If an index has a negative",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "fcde0a499dd40fcd479c2c17",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 112,
+    "text": "et anIndexError.\n    •  If an index has a negative value, it counts backward from the end of the list.\nTheinoperator also works on lists.\n>>>  cheeses  =  ['Cheddar','Edam','Gouda']\n>>>'Edam'in  cheeses\nTrue\n>>>'Brie'in  cheeses\nFalse",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1584
+    }
+  },
+  {
+    "chunk_id": "994845199148e16a50d175a5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 113,
+    "text": "10.3. Traversing a list                                                                                                                     91\n10.3    Traversing a list\n\nThe most common way to traverse the elements of a list is with aforloop.  The syntax is\nthe same as for strings:\nfor  cheese  in  cheeses:\n      print(cheese)\nThis works well if you only need to read the elements of the list.  But if you want to write\nor update the elements, you need the indices. A common way to do that is to co",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "18d8be9dcac016fd818d873b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 113,
+    "text": "need the indices. A common way to do that is to combine the\nbuilt-in functionsrangeandlen:\nfor  i  in  range(len(numbers)):\n      numbers[i]  =  numbers[i]  *  2\nThis loop traverses the list and updates each element.lenreturns the number of elements\nin the list.rangereturns a list of indices from 0 ton−1, wherenis the length of the list.\nEach time through the loopigets the index of the next element. The assignment statement\nin the body usesito read the old value of the element and to assign the ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "323a5fb43263e769512cb318",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 113,
+    "text": "ad the old value of the element and to assign the new value.\n\nAforloop over an empty list never runs the body:\nfor  x  in  []:\n      print('This  never  happens.')\nAlthough a list can contain another list, the nested list still counts as a single element. The\nlength of this list is four:\n['spam',  1,  ['Brie','Roquefort','Pol  le  Veq'],  [1,  2,  3]]\n\n10.4    List operations\n\nThe+operator concatenates lists:\n>>>  a  =  [1,  2,  3]\n>>>  b  =  [4,  5,  6]\n>>>  c  =  a  +  b\n>>>  c\n[1,  2,  3,  4,",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "6215745c01def783e4e37c55",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 113,
+    "text": "  5,  6]\n>>>  c  =  a  +  b\n>>>  c\n[1,  2,  3,  4,  5,  6]\nThe*operator repeats a list a given number of times:\n>>>  [0]  *  4\n[0,  0,  0,  0]\n>>>  [1,  2,  3]  *  3\n[1,  2,  3,  1,  2,  3,  1,  2,  3]\nThe first example repeats[0]four times.  The second example repeats the list[1,  2,  3]\nthree times.\n\n10.5    List slices\n\nThe slice operator also works on lists:",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1714
+    }
+  },
+  {
+    "chunk_id": "64ae5012bf70bc33564f0302",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 114,
+    "text": "92                                                                                                                             Chapter 10. Lists\n\n>>>  t  =  ['a','b','c','d','e','f']\n>>>  t[1:3]\n['b','c']\n>>>  t[:4]\n['a','b','c','d']\n>>>  t[3:]\n['d','e','f']\nIf you omit the first index, the slice starts at the beginning. If you omit the second, the slice\ngoes to the end. So if you omit both, the slice is a copy of the whole list.\n>>>  t[:]\n['a','b','c','d','e','f']\nSince lists are mutable, it is",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "0bf33faa387c93970469de2c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 114,
+    "text": "b','c','d','e','f']\nSince lists are mutable, it is often useful to make a copy before performing operations that\nmodify lists.\n\nA slice operator on the left side of an assignment can update multiple elements:\n>>>  t  =  ['a','b','c','d','e','f']\n>>>  t[1:3]  =  ['x','y']\n>>>  t\n['a','x','y','d','e','f']\n\n10.6    List methods\n\nPython provides methods that operate on lists.  For example,appendadds a new element\nto the end of a list:\n>>>  t  =  ['a','b','c']\n>>>  t.append('d')\n>>>  t\n['a','b','c','",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "9ef00e5dda42349a4631103f",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 114,
+    "text": ",'b','c']\n>>>  t.append('d')\n>>>  t\n['a','b','c','d']\nextendtakes a list as an argument and appends all of the elements:\n>>>  t1  =  ['a','b','c']\n>>>  t2  =  ['d','e']\n>>>  t1.extend(t2)\n>>>  t1\n['a','b','c','d','e']\nThis example leavest2unmodified.\n\nsortarranges the elements of the list from low to high:\n>>>  t  =  ['d','c','e','b','a']\n>>>  t.sort()\n>>>  t\n['a','b','c','d','e']\nMost list methods are void; they modify the list and returnNone. If you accidentally write\nt  =  t.sort(), you will ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "e07648f1594f4c51137df93e",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 114,
+    "text": "f you accidentally write\nt  =  t.sort(), you will be disappointed with the result.",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1432
+    }
+  },
+  {
+    "chunk_id": "fdd90faf2382f6ca5e4b3c55",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 115,
+    "text": "10.7. Map, filter and reduce                                                                                                          93\n10.7    Map, filter and reduce\n\nTo add up all the numbers in a list, you can use a loop like this:\ndef  add_all(t):\n      total  =  0\n      for  x  in  t:\n            total  +=  x\n      return  total\ntotalis  initialized  to  0.   Each  time  through  the  loop,xgets  one  element  from  the  list.\nThe+=operator provides a short way to update a variable.  Thisa",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "320dbb288ea51918ecb19856",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 115,
+    "text": " provides a short way to update a variable.  Thisaugmented assignment\nstatement,\n      total  +=  x\nis equivalent to\n      total  =  total  +  x\nAs the loop runs,totalaccumulates the sum of the elements; a variable used this way is\nsometimes called anaccumulator.\n\nAdding up the elements of a list is such a common operation that Python provides it as a\nbuilt-in function,sum:\n>>>  t  =  [1,  2,  3]\n>>>  sum(t)\n6\nAn operation like this that combines a sequence of elements into a single value is som",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "9a974372c9cd51ead70acf76",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 115,
+    "text": " a sequence of elements into a single value is some-\ntimes calledreduce.\n\nSometimes you want to traverse one list while building another. For example, the following\nfunction takes a list of strings and returns a new list that contains capitalized strings:\ndef  capitalize_all(t):\n      res  =  []\n      for  s  in  t:\n            res.append(s.capitalize())\n      return  res\nresis initialized with an empty list; each time through the loop, we append the next ele-\nment. Soresis another kind of accum",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "f88e10ac41a250c837696c74",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 115,
+    "text": " the next ele-\nment. Soresis another kind of accumulator.\n\nAn operation likecapitalize_allis sometimes called amapbecause it “maps” a function\n(in this case the methodcapitalize) onto each of the elements in a sequence.\n\nAnother common operation is to select some of the elements from a list and return a sublist.\nFor example, the following function takes a list of strings and returns a list that contains\nonly the uppercase strings:\ndef  only_upper(t):\n      res  =  []\n      for  s  in  t:\n       ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b085217fb7420e0f18fbad48",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 115,
+    "text": "(t):\n      res  =  []\n      for  s  in  t:\n            if  s.isupper():\n                  res.append(s)\n      return  res",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 1921
+    }
+  },
+  {
+    "chunk_id": "d3cbeb3afae93276421de780",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 116,
+    "text": "94                                                                                                                             Chapter 10. Lists\n\nisupperis a string method that returnsTrueif the string contains only upper case letters.\nAn operation likeonly_upperis called afilterbecause it selects some of the elements and\nfilters out the others.\nMost common list operations can be expressed as a combination of map, filter and reduce.\n\n10.8    Deleting elements\n\nThere are several ways to delete el",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "a9abc5c982fa382857d6400a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 116,
+    "text": "ting elements\n\nThere are several ways to delete elements from a list. If you know the index of the element\nyou want, you can usepop:\n>>>  t  =  ['a','b','c']\n>>>  x  =  t.pop(1)\n>>>  t\n['a','c']\n>>>  x\n'b'\npopmodifies the list and returns the element that was removed.  If you don’t provide an\nindex, it deletes and returns the last element.\nIf you don’t need the removed value, you can use thedeloperator:\n>>>  t  =  ['a','b','c']\n>>>  del  t[1]\n>>>  t\n['a','c']\nIf you know the element you want to ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "e617f40a0b3e92dabbd44dea",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 116,
+    "text": "  t\n['a','c']\nIf you know the element you want to remove (but not the index), you can useremove:\n>>>  t  =  ['a','b','c']\n>>>  t.remove('b')\n>>>  t\n['a','c']\nThe return value fromremoveisNone.\nTo remove more than one element, you can usedelwith a slice index:\n>>>  t  =  ['a','b','c','d','e','f']\n>>>  del  t[1:5]\n>>>  t\n['a','f']\nAs usual, the slice selects all the elements up to but not including the second index.\n\n10.9    Lists and strings\n\nA string is a sequence of characters and a list is a s",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "145c0eaa4c4fe70ce84ced42",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 116,
+    "text": "ring is a sequence of characters and a list is a sequence of values, but a list of characters\nis not the same as a string. To convert from a string to a list of characters, you can uselist:\n\n>>>  s  ='spam'\n>>>  t  =  list(s)\n>>>  t\n['s','p','a','m']",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1600
+    }
+  },
+  {
+    "chunk_id": "4f81e586ba661e14825d1dbf",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 117,
+    "text": "10.10. Objects and values                                                                                                             95\n\n                                         Figure 10.2: State diagram.\n\nBecauselistis the name of a built-in function, you should avoid using it as a variable\nname. I also avoidlbecause it looks too much like1. So that’s why I uset.\n\nThelistfunction breaks a string into individual letters. If you want to break a string into\nwords, you can use thesplitmethod:\n>>>",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "feb8a98824d84be4b309c744",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 117,
+    "text": "string into\nwords, you can use thesplitmethod:\n>>>  s  ='pining  for  the  fjords'\n>>>  t  =  s.split()\n>>>  t\n['pining','for','the','fjords']\nAn optional argument called adelimiterspecifies which characters to use as word bound-\naries. The following example uses a hyphen as a delimiter:\n>>>  s  ='spam-spam-spam'\n>>>  delimiter  ='-'\n>>>  t  =  s.split(delimiter)\n>>>  t\n['spam','spam','spam']\njoinis the inverse ofsplit. It takes a list of strings and concatenates the elements.joinis\na string met",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "9f97244eab37ae7b7629ae43",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 117,
+    "text": " and concatenates the elements.joinis\na string method, so you have to invoke it on the delimiter and pass the list as a parameter:\n\n>>>  t  =  ['pining','for','the','fjords']\n>>>  delimiter  ='  '\n>>>  s  =  delimiter.join(t)\n>>>  s\n'pining  for  the  fjords'\nIn this case the delimiter is a space character,  sojoinputs a space between words.   To\nconcatenate strings without spaces, you can use the empty string,'', as a delimiter.\n\n10.10    Objects and values\n\nIf we run these assignment statement",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "3fd802161aee61b8ce460517",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 117,
+    "text": "s and values\n\nIf we run these assignment statements:\na  ='banana'\nb  ='banana'\nWe know thataandbboth refer to a string, but we don’t know whether they refer to the\nsamestring. There are two possible states, shown in Figure 10.2.\n\nIn one case,aandbrefer to two different objects that have the same value.  In the second\ncase, they refer to the same object.\n\nTo check whether two variables refer to the same object, you can use theisoperator.",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1790
+    }
+  },
+  {
+    "chunk_id": "6b2da7a8280aabcd855cfaa7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 118,
+    "text": "96                                                                                                                             Chapter 10. Lists\n\n                                         Figure 10.3: State diagram.\n\n                                         Figure 10.4: State diagram.\n\n>>>  a  ='banana'\n>>>  b  ='banana'\n>>>  a  is  b\nTrue\nIn this example, Python only created one string object, and bothaandbrefer to it.  But\nwhen you create two lists, you get two objects:\n>>>  a  =  [1,  2,  3]\n>",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "b9fd3942a2cda111effac4f0",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 118,
+    "text": "sts, you get two objects:\n>>>  a  =  [1,  2,  3]\n>>>  b  =  [1,  2,  3]\n>>>  a  is  b\nFalse\nSo the state diagram looks like Figure 10.3.\n\nIn this case we would say that the two lists areequivalent, because they have the same el-\nements, but notidentical, because they are not the same object. If two objects are identical,\nthey are also equivalent, but if they are equivalent, they are not necessarily identical.\n\nUntil now, we have been using “object” and “value” interchangeably, but it is more pre",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "78c73c5c2efc61f5f89bf185",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 118,
+    "text": "t” and “value” interchangeably, but it is more precise\nto say that an object has a value.  If you evaluate[1,  2,  3], you get a list object whose\nvalue is a sequence of integers.  If another list has the same elements,  we say it has the\nsame value, but it is not the same object.\n\n10.11    Aliasing\n\nIfarefers to an object and you assignb  =  a, then both variables refer to the same object:\n>>>  a  =  [1,  2,  3]\n>>>  b  =  a\n>>>  b  is  a\nTrue\nThe state diagram looks like Figure 10.4.\n\nThe asso",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "598cafdea326133d7f8e1129",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 118,
+    "text": "he state diagram looks like Figure 10.4.\n\nThe association of a variable with an object is called areference. In this example, there are\ntwo references to the same object.\n\nAn object with more than one reference has more than one name, so we say that the object\nisaliased.\n\nIf the aliased object is mutable, changes made with one alias affect the other:",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1702
+    }
+  },
+  {
+    "chunk_id": "735c423bf43e5fba28d14d38",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 119,
+    "text": "10.12. List arguments                                                                                                                     97\n\n                                         Figure 10.5: Stack diagram.\n\n>>>  b[0]  =  42\n>>>  a\n[42,  2,  3]\nAlthough  this  behavior  can  be  useful,  it  is  error-prone.   In  general,  it  is  safer  to  avoid\naliasing when you are working with mutable objects.\n\nFor immutable objects like strings, aliasing is not as much of a problem. In this example:\na",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "a0fb99997d831e6520a46745",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 119,
+    "text": "ng is not as much of a problem. In this example:\na  ='banana'\nb  ='banana'\nIt almost never makes a difference whetheraandbrefer to the same string or not.\n\n10.12    List arguments\n\nWhen you pass a list to a function, the function gets a reference to the list.  If the function\nmodifies the list, the caller sees the change.  For example,delete_headremoves the first\nelement from a list:\ndef  delete_head(t):\n      del  t[0]\nHere’s how it is used:\n>>>  letters  =  ['a','b','c']\n>>>  delete_head(lette",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "ab0a311f064fdb54c2fdeb26",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 119,
+    "text": "  letters  =  ['a','b','c']\n>>>  delete_head(letters)\n>>>  letters\n['b','c']\nThe parametertand the variablelettersare aliases for the same object. The stack diagram\nlooks like Figure 10.5.\n\nSince the list is shared by two frames, I drew it between them.\n\nIt is important to distinguish between operations that modify lists and operations that cre-\nate new lists. For example, theappendmethod modifies a list, but the+operator creates a\nnew list.\n\nHere’s an example usingappend:\n\n>>>  t1  =  [1,  2]\n>",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "a9c670d5cc03e47af512337c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 119,
+    "text": "e’s an example usingappend:\n\n>>>  t1  =  [1,  2]\n>>>  t2  =  t1.append(3)\n>>>  t1\n[1,  2,  3]\n>>>  t2\nNone",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1456
+    }
+  },
+  {
+    "chunk_id": "da15f05c8a1e6a00eda77591",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 120,
+    "text": "98                                                                                                                             Chapter 10. Lists\n\nThe return value fromappendisNone.\n\nHere’s an example using the+operator:\n\n>>>  t3  =  t1  +  [4]\n>>>  t1\n[1,  2,  3]\n>>>  t3\n[1,  2,  3,  4]\n\nThe result of the operator is a new list, and the original list is unchanged.\n\nThis difference is important when you write functions that are supposed to modify lists.\nFor example, this functiondoes notdelete th",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "485e3e1f3a63d017d16d6b0a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 120,
+    "text": "lists.\nFor example, this functiondoes notdelete the head of a list:\n\ndef  bad_delete_head(t):\n      t  =  t[1:]                            #  WRONG!\n\nThe slice operator creates a new list and the assignment makestrefer to it, but that doesn’t\naffect the caller.\n\n>>>  t4  =  [1,  2,  3]\n>>>  bad_delete_head(t4)\n>>>  t4\n[1,  2,  3]\n\nAt the beginning ofbad_delete_head,tandt4refer to the same list.  At the end,trefers\nto a new list, butt4still refers to the original, unmodified list.\n\nAn alternative",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "757f094f412286572478f9f8",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 120,
+    "text": " to the original, unmodified list.\n\nAn alternative is to write a function that creates and returns a new list. For example,tail\nreturns all but the first element of a list:\ndef  tail(t):\n      return  t[1:]\nThis function leaves the original list unmodified. Here’s how it is used:\n>>>  letters  =  ['a','b','c']\n>>>  rest  =  tail(letters)\n>>>  rest\n['b','c']\n\n10.13    Debugging\n\nCareless use of lists (and other mutable objects) can lead to long hours of debugging. Here\nare some common pitfalls an",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "c17d6ee0881fa4446c0177ef",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 120,
+    "text": "urs of debugging. Here\nare some common pitfalls and ways to avoid them:\n\n   1.  Most list methods modify the argument and returnNone.  This is the opposite of the\n       string methods, which return a new string and leave the original alone.\n       If you are used to writing string code like this:\n\n       word  =  word.strip()\n\n       It is tempting to write list code like this:",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1731
+    }
+  },
+  {
+    "chunk_id": "2500b76fbc7bb3fa8ea28482",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 121,
+    "text": "10.13. Debugging                                                                                                                           99\n\n       t  =  t.sort()                      #  WRONG!\n\n       BecausesortreturnsNone, the next operation you perform withtis likely to fail.\n       Before using list methods and operators, you should read the documentation care-\n       fully and then test them in interactive mode.\n\n   2.  Pick an idiom and stick with it.\n       Part of the problem with lis",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "6cacf41b2a9d9bd156e9cd5d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 121,
+    "text": "stick with it.\n       Part of the problem with lists is that there are too many ways to do things. For exam-\n       ple, to remove an element from a list, you can usepop,remove,del, or even a slice\n       assignment.\n       To add an element, you can use theappendmethod or the+operator. Assuming that\n       tis a list andxis a list element, these are correct:\n\n       t.append(x)\n       t  =  t  +  [x]\n       t  +=  [x]\n\n       And these are wrong:\n\n       t.append([x])                    #  WRON",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "ad550235d3a2f23b987f6d89",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 121,
+    "text": ":\n\n       t.append([x])                    #  WRONG!\n       t  =  t.append(x)                #  WRONG!\n       t  +  [x]                                #  WRONG!\n       t  =  t  +  x                            #  WRONG!\n\n       Try  out  each  of  these  examples  in  interactive  mode  to  make  sure  you  understand\n       what they do. Notice that only the last one causes a runtime error; the other three are\n       legal, but they do the wrong thing.\n\n   3.  Make copies to avoid aliasing.\n    ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "109e2691eece3dc211457454",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 121,
+    "text": "thing.\n\n   3.  Make copies to avoid aliasing.\n       If you want to use a method likesortthat modifies the argument, but you need to\n       keep the original list as well, you can make a copy.\n\n       >>>  t  =  [3,  1,  2]\n       >>>  t2  =  t[:]\n       >>>  t2.sort()\n       >>>  t\n       [3,  1,  2]\n       >>>  t2\n       [1,  2,  3]\n\n       In this example you could also use the built-in functionsorted, which returns a new,\n       sorted list and leaves the original alone.\n\n       >>>  t2  =  ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "22833ddf219559675d87b5bd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 121,
+    "text": "nd leaves the original alone.\n\n       >>>  t2  =  sorted(t)\n       >>>  t\n       [3,  1,  2]\n       >>>  t2\n       [1,  2,  3]",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 1926
+    }
+  },
+  {
+    "chunk_id": "9826fc734339d869ec292640",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 122,
+    "text": "100                                                                                                                           Chapter 10. Lists\n10.14    Glossary\nlist:A sequence of values.\n\nelement:One of the values in a list (or other sequence), also called items.\nnested list:A list that is an element of another list.\n\naccumulator:A variable used in a loop to add up or accumulate a result.\naugmented assignment:A statement that updates the value of a variable using an opera-\n       tor like+=.\n\n",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "05f1f22f2f016891364c68aa",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 122,
+    "text": "of a variable using an opera-\n       tor like+=.\n\nreduce:A processing pattern that traverses a sequence and accumulates the elements into\n       a single result.\nmap:A processing pattern that traverses a sequence and performs an operation on each\n       element.\n\nfilter:A processing pattern that traverses a list and selects the elements that satisfy some\n       criterion.\n\nobject:Something a variable can refer to. An object has a type and a value.\nequivalent:Having the same value.\nidentical:Bein",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "5e7d271977196d781e0f2dfb",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 122,
+    "text": ".\nequivalent:Having the same value.\nidentical:Being the same object (which implies equivalence).\n\nreference:The association between a variable and its value.\naliasing:A circumstance where two or more variables refer to the same object.\n\ndelimiter:A character or string used to indicate where a string should be split.\n\n10.15    Exercises\n\nYou  can  download  solutions  to  these  exercises  fromhttps://thinkpython.com/code/\nlist_exercises.py.\nExercise 10.1.Write a function callednested_sumthat tak",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "87ef4e05fe800fbbf5e38d84",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 122,
+    "text": "ise 10.1.Write a function callednested_sumthat takes a list of lists of integers and adds up\nthe elements from all of the nested lists. For example:\n>>>  t  =  [[1,  2],  [3],  [4,  5,  6]]\n>>>  nested_sum(t)\n21\nExercise 10.2.Write a function calledcumsumthat takes a list of numbers and returns the cumu-\nlative sum; that is, a new list where the ith element is the sum of the first i+1elements from the\noriginal list. For example:\n>>>  t  =  [1,  2,  3]\n>>>  cumsum(t)\n[1,  3,  6]\nExercise 10.3.Wri",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "066cc196a5444eddb7a078e5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 122,
+    "text": ",  3]\n>>>  cumsum(t)\n[1,  3,  6]\nExercise 10.3.Write a function calledmiddlethat takes a list and returns a new list that contains\nall but the first and last elements. For example:\n>>>  t  =  [1,  2,  3,  4]\n>>>  middle(t)\n[2,  3]",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2030
+    }
+  },
+  {
+    "chunk_id": "072b7ca88d1f619831172dec",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": "10.15. Exercises                                                                                                                             101\n\nExercise 10.4.Write a function calledchopthat takes a list, modifies it by removing the first and\nlast elements, and returnsNone. For example:\n>>>  t  =  [1,  2,  3,  4]\n>>>  chop(t)\n>>>  t\n[2,  3]\nExercise 10.5.Write a function calledis_sortedthat takes a list as a parameter and returnsTrue\nif the list is sorted in ascending order andFalseotherwise. F",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "2e2f73c72a31013e8ca1c5e5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": " is sorted in ascending order andFalseotherwise. For example:\n>>>  is_sorted([1,  2,  2])\nTrue\n>>>  is_sorted(['b','a'])\nFalse\nExercise 10.6.Two words are anagrams if you can rearrange the letters from one to spell the other.\nWrite a function calledis_anagramthat takes two strings and returnsTrueif they are anagrams.\nExercise 10.7.Write a function calledhas_duplicatesthat takes a list and returnsTrueif there\nis any element that appears more than once. It should not modify the original list.\nExer",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "ac217985075a902262c904de",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": "once. It should not modify the original list.\nExercise 10.8.This exercise pertains to the so-called Birthday Paradox, which you can read about\nathttp: // en. wikipedia. org/ wiki/ Birthday_ paradox.\n\nIf there are 23 students in your class, what are the chances that two of them have the same birthday?\nYou can estimate this probability by generating random samples of 23 birthdays and checking for\nmatches.   Hint:  you  can  generate  random  birthdays  with  therandintfunction  in  therandom\nmodul",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "afffbd8b85666a3061f0b3ef",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": "ays  with  therandintfunction  in  therandom\nmodule.\n\nYou can download my solution fromhttps: // thinkpython. com/ code/ birthday. py.\nExercise 10.9.Write a function that reads the filewords.txtand builds a list with one element\nper word.  Write two versions of this function, one using theappendmethod and the other using\nthe idiomt  =  t  +  [x]. Which one takes longer to run? Why?\n\nSolution:https: // thinkpython. com/ code/ wordlist. py.\nExercise 10.10.To check whether a word is in the word lis",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "0fc48d89b71c2f00f3ecc6d9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": "e 10.10.To check whether a word is in the word list, you could use theinoperator, but it\nwould be slow because it searches through the words in order.\n\nBecause the words are in alphabetical order, we can speed things up with a bisection search (also\nknown as binary search), which is similar to what you do when you look a word up in the dictionary\n(the book, not the data structure). You start in the middle and check to see whether the word you are\nlooking for comes before the word in the middle o",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "37bffed104bcd11e7f2f6986",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": "\nlooking for comes before the word in the middle of the list.  If so, you search the first half of the list\nthe same way. Otherwise you search the second half.\n\nEither way, you cut the remaining search space in half.  If the word list has 113,809 words, it will\ntake about 17 steps to find the word or conclude that it’s not there.\n\nWrite a function calledin_bisectthat takes a sorted list and a target value and returnsTrueif\nthe word is in the list andFalseif it’s not.\n\nOr  you  could  read  the  ",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2750
+    }
+  },
+  {
+    "chunk_id": "819a8ac38ae5139e6736dafd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": " andFalseif it’s not.\n\nOr  you  could  read  the  documentation  of  thebisectmodule  and  use  that!   Solution:https:\n// thinkpython. com/ code/ inlist. py.\nExercise 10.11.Two words are a “reverse pair” if each is the reverse of the other. Write a program\nthat finds all the reverse pairs in the word list.  Solution:https: // thinkpython. com/ code/\nreverse_ pair. py.\nExercise  10.12.Two  words  “interlock”  if  taking  alternating  letters  from  each  forms  a  new\nword.    For  example,  “sh",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2700,
+      "end": 3200
+    }
+  },
+  {
+    "chunk_id": "f60449823fd0f0e816f9fbb9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 123,
+    "text": "m  each  forms  a  new\nword.    For  example,  “shoe”  and  “cold”  interlock  to  form  “schooled”.    Solution:https: //",
+    "metadata": {
+      "chapter": "Lists",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 3150,
+      "end": 3272
+    }
+  },
+  {
+    "chunk_id": "2ac4fd136dc57c45b6c96445",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 125,
+    "text": "Chapter 11\n\nDictionaries\n\nThis  chapter  presents  another  built-in  type  called  a  dictionary.   Dictionaries  are  one  of\nPython’s  best  features;  they  are  the  building  blocks  of  many  efficient  and  elegant  algo-\nrithms.\n\n11.1    A dictionary is a mapping\n\nAdictionaryis like a list, but more general.  In a list, the indices have to be integers; in a\ndictionary they can be (almost) any type.\n\nA  dictionary  contains  a  collection  of  indices,  which  are  calledkeys,  and  a  c",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "63e7055495282596315fd4ab",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 125,
+    "text": "  of  indices,  which  are  calledkeys,  and  a  collection  of\nvalues.  Each key is associated with a single value.  The association of a key and a value is\ncalled akey-value pairor sometimes anitem.\n\nIn mathematical language, a dictionary represents amappingfrom keys to values, so you\ncan also say that each key “maps to” a value. As an example, we’ll build a dictionary that\nmaps from English to Spanish words, so the keys and the values are all strings.\n\nThe functiondictcreates a new dictionary",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "15390091a9d966db1e81aacd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 125,
+    "text": "strings.\n\nThe functiondictcreates a new dictionary with no items.  Becausedictis the name of a\nbuilt-in function, you should avoid using it as a variable name.\n>>>  eng2sp  =  dict()\n>>>  eng2sp\n{}\nThe squiggly-brackets,{}, represent an empty dictionary.  To add items to the dictionary,\nyou can use square brackets:\n>>>  eng2sp['one']  ='uno'\nThis line creates an item that maps from the key'one'to the value'uno'.  If we print the\ndictionary again, we see a key-value pair with a colon between the ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "9cf21a57f67d11e9e1ca22ce",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 125,
+    "text": " we see a key-value pair with a colon between the key and value:\n>>>  eng2sp\n{'one':'uno'}\nThis output format is also an input format.  For example, you can create a new dictionary\nwith three items:",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1548
+    }
+  },
+  {
+    "chunk_id": "8aedf89ba047c70529fe0592",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 126,
+    "text": "104                                                                                                             Chapter 11. Dictionaries\n\n>>>  eng2sp  =  {'one':'uno','two':'dos','three':'tres'}\nBut if you printeng2sp, you might be surprised:\n>>>  eng2sp\n{'one':'uno','three':'tres','two':'dos'}\nThe order of the key-value pairs might not be the same.   If you type the same example\non  your  computer,  you  might  get  a  different  result.   In  general,  the  order  of  items  in  a\ndictionary i",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "8063677e169b90dccc8802ed",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 126,
+    "text": "eneral,  the  order  of  items  in  a\ndictionary is unpredictable.\n\nBut that’s not a problem because the elements of a dictionary are never indexed with inte-\nger indices. Instead, you use the keys to look up the corresponding values:\n>>>  eng2sp['two']\n'dos'\nThe key'two'always maps to the value'dos'so the order of the items doesn’t matter.\n\nIf the key isn’t in the dictionary, you get an exception:\n>>>  eng2sp[']'four\nKeyError:'four'\nThelenfunction works on dictionaries; it returns the number of",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "1746e22df6366285f6efa4fc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 126,
+    "text": "on works on dictionaries; it returns the number of key-value pairs:\n>>>  len(eng2sp)\n3\nTheinoperator works on dictionaries, too; it tells you whether something appears as akey\nin the dictionary (appearing as a value is not good enough).\n>>>'one'in  eng2sp\nTrue\n>>>'uno'in  eng2sp\nFalse\nTo  see  whether  something  appears  as  a  value  in  a  dictionary,  you  can  use  the  method\nvalues, which returns a collection of values, and then use theinoperator:\n>>>  vals  =  eng2sp.values()\n>>>'uno'in ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "b6beb156c6b56f5533f7b98d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 126,
+    "text": "perator:\n>>>  vals  =  eng2sp.values()\n>>>'uno'in  vals\nTrue\nTheinoperator uses different algorithms for lists and dictionaries. For lists, it searches the\nelements of the list in order, as in Section 8.6.  As the list gets longer, the search time gets\nlonger in direct proportion.\n\nPython dictionaries use a data structure called ahashtablethat has a remarkable property:\ntheinoperator takes about the same amount of time no matter how many items are in the\ndictionary. I explain how that’s possible",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "ffe85ff0fbb9e3c4f4226289",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 126,
+    "text": "e in the\ndictionary. I explain how that’s possible in Section B.4, but the explanation might not make\nsense until you’ve read a few more chapters.\n\n11.2    Dictionary as a collection of counters\n\nSuppose you are given a string and you want to count how many times each letter appears.\nThere are several ways you could do it:",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2124
+    }
+  },
+  {
+    "chunk_id": "13cf16468f39b71fdb100818",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 127,
+    "text": "11.2. Dictionary as a collection of counters                                                                             105\n\n   1.  You could create 26 variables, one for each letter of the alphabet. Then you could tra-\n       verse the string and, for each character, increment the corresponding counter, proba-\n       bly using a chained conditional.\n\n   2.  You could create a list with 26 elements.  Then you could convert each character to\n       a number (using the built-in functionord), use ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "319763948358031720b5b09a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 127,
+    "text": "   a number (using the built-in functionord), use the number as an index into the list,\n       and increment the appropriate counter.\n\n   3.  You could create a dictionary with characters as keys and counters as the correspond-\n       ing values. The first time you see a character, you would add an item to the dictionary.\n       After that you would increment the value of an existing item.\n\nEach of these options performs the same computation, but each of them implements that\ncomputation in a dif",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "9f5c00b12f7d78b48928a591",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 127,
+    "text": " each of them implements that\ncomputation in a different way.\n\nAnimplementationis  a  way  of  performing  a  computation;  some  implementations  are\nbetter than others. For example, an advantage of the dictionary implementation is that we\ndon’t have to know ahead of time which letters appear in the string and we only have to\nmake room for the letters that do appear.\n\nHere is what the code might look like:\ndef  histogram(s):\n      d  =  dict()\n      for  c  in  s:\n            if  c  not  in  d:",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "674d585deb41d4fd9f80d468",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 127,
+    "text": "     for  c  in  s:\n            if  c  not  in  d:\n                  d[c]  =  1\n            else:\n                  d[c]  +=  1\n      return  d\nThe name of the function ishistogram, which is a statistical term for a collection of counters\n(or frequencies).\n\nThe first line of the function creates an empty dictionary. Theforloop traverses the string.\nEach time through the loop, if the charactercis not in the dictionary, we create a new item\nwith keycand the initial value 1 (since we have seen this",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "12716df3f6039603699238e5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 127,
+    "text": "ycand the initial value 1 (since we have seen this letter once). Ifcis already in the\ndictionary we incrementd[c].\n\nHere’s how it works:\n>>>  h  =  histogram('brontosaurus')\n>>>  h\n{'a':  1,'b':  1,'o':  2,'n':  1,'s':  2,'r':  2,'u':  2,'t':  1}\nThe histogram indicates that the letters'a'and'b'appear once;'o'appears twice, and\nso on.\n\nDictionaries  have  a  method  calledgetthat  takes  a  key  and  a  default  value.   If  the  key\nappears in the dictionary, getreturns the corresponding value;",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "e3eb01558236709a121d2b35",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 127,
+    "text": "he dictionary, getreturns the corresponding value;  otherwise it returns the\ndefault value. For example:\n>>>  h  =  histogram('a')\n>>>  h\n{'a':  1}\n>>>  h.get('a',  0)",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2417
+    }
+  },
+  {
+    "chunk_id": "d04bc1f48efcdabc132c55c9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 128,
+    "text": "106                                                                                                             Chapter 11. Dictionaries\n\n1\n>>>  h.get('c',  0)\n0\nAs an exercise, usegetto writehistogrammore concisely. You should be able to eliminate\ntheifstatement.\n\n11.3    Looping and dictionaries\n\nIf you use a dictionary in aforstatement, it traverses the keys of the dictionary. For exam-\nple,print_histprints each key and the corresponding value:\ndef  print_hist(h):\n      for  c  in  h:\n       ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "adb586e92148134fcf5286f7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 128,
+    "text": ":\ndef  print_hist(h):\n      for  c  in  h:\n            print(c,  h[c])\nHere’s what the output looks like:\n>>>  h  =  histogram('parrot')\n>>>  print_hist(h)\na  1\np  1\nr  2\nt  1\no  1\nAgain, the keys are in no particular order. To traverse the keys in sorted order, you can use\nthe built-in functionsorted:\n>>>  for  key  in  sorted(h):\n...          print(key,  h[key])\na  1\no  1\np  1\nr  2\nt  1\n\n11.4    Reverse lookup\n\nGiven a dictionarydand a keyk, it is easy to find the corresponding valuev  =  d[k]",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "18d6f5ef174d56b0b8fd6311",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 128,
+    "text": " is easy to find the corresponding valuev  =  d[k]. This\noperation is called alookup.\n\nBut what if you havevand you want to findk? You have two problems: first, there might\nbe more than one key that maps to the valuev.  Depending on the application, you might\nbe able to pick one, or you might have to make a list that contains all of them.  Second,\nthere is no simple syntax to do areverse lookup; you have to search.\nHere is a function that takes a value and returns the first key that maps to that",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "7848b9eb628069ff7ab5a96f",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 128,
+    "text": " value and returns the first key that maps to that value:\ndef  reverse_lookup(d,  v):\n      for  k  in  d:\n            if  d[k]  ==  v:\n                  return  k\n      raise  LookupError()",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1540
+    }
+  },
+  {
+    "chunk_id": "1eef80c6eec7bcded470f2f1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 129,
+    "text": "11.5. Dictionaries and lists                                                                                                         107\n\nThis function is yet another example of the search pattern, but it uses a feature we haven’t\nseen  before,raise.    Theraise  statementcauses  an  exception;  in  this  case  it  causes  a\nLookupError, which is a built-in exception used to indicate that a lookup operation failed.\n\nIf we get to the end of the loop, that meansvdoesn’t appear in the dictionary as",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "1be6471e0940f04253a13ffd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 129,
+    "text": "op, that meansvdoesn’t appear in the dictionary as a value, so\nwe raise an exception.\n\nHere is an example of a successful reverse lookup:\n>>>  h  =  histogram('parrot')\n>>>  key  =  reverse_lookup(h,  2)\n>>>  key\n'r'\nAnd an unsuccessful one:\n>>>  key  =  reverse_lookup(h,  3)\nTraceback  (most  recent  call  last):\n   File  \"<stdin>\",  line  1,  in  <module>\n   File  \"<stdin>\",  line  5,  in  reverse_lookup\nLookupError\nThe effect when you raise an exception is the same as when Python raises one: ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "a27f9fbcce722bf122fe8fd7",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 129,
+    "text": " exception is the same as when Python raises one:  it prints a\ntraceback and an error message.\n\nWhen  you  raise  an  exception,  you  can  provide  a  detailed  error  message  as  an  optional\nargument. For example:\n>>>  raise  LookupError('value  does  not  appear  in  the  dictionary')\nTraceback  (most  recent  call  last):\n   File  \"<stdin>\",  line  1,  in  ?\nLookupError:  value  does  not  appear  in  the  dictionary\nA reverse lookup is much slower than a forward lookup; if you have to do ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "5c1686a80d85aa61b07b2038",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 129,
+    "text": "h slower than a forward lookup; if you have to do it often, or if the\ndictionary gets big, the performance of your program will suffer.\n\n11.5    Dictionaries and lists\n\nLists can appear as values in a dictionary.  For example, if you are given a dictionary that\nmaps from letters to frequencies, you might want to invert it; that is, create a dictionary\nthat maps from frequencies to letters.  Since there might be several letters with the same\nfrequency, each value in the inverted dictionary should",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "6a1039d17b77e1153d0f224c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 129,
+    "text": "ency, each value in the inverted dictionary should be a list of letters.\n\nHere is a function that inverts a dictionary:\ndef  invert_dict(d):\n      inverse  =  dict()\n      for  key  in  d:\n            val  =  d[key]\n            if  val  not  in  inverse:\n                  inverse[val]  =  [key]\n            else:\n                  inverse[val].append(key)\n      return  inverse",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2178
+    }
+  },
+  {
+    "chunk_id": "26f1ba5b97632824f8f39df6",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 130,
+    "text": "108                                                                                                             Chapter 11. Dictionaries\n\n                                         Figure 11.1: State diagram.\n\nEach time through the loop,keygets a key fromdandvalgets the corresponding value.\nIfvalis not ininverse, that means we haven’t seen it before, so we create a new item and\ninitialize it with asingleton(a list that contains a single element). Otherwise we have seen\nthis value before, so we app",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "7aa15d5ea2ff30407017794d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 130,
+    "text": "therwise we have seen\nthis value before, so we append the corresponding key to the list.\nHere is an example:\n>>>  hist  =  histogram('parrot')\n>>>  hist\n{'a':  1,'p':  1,'r':  2,'t':  1,'o':  1}\n>>>  inverse  =  invert_dict(hist)\n>>>  inverse\n{1:  ['a','p','t','o'],  2:  ['r']}\nFigure 11.1 is a state diagram showinghistandinverse. A dictionary is represented as a\nbox with the typedictabove it and the key-value pairs inside.  If the values are integers,\nfloats or strings, I draw them inside the b",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "1466aead72f551943d5dbd63",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 130,
+    "text": "egers,\nfloats or strings, I draw them inside the box, but I usually draw lists outside the box, just\nto keep the diagram simple.\n\nLists can be values in a dictionary, as this example shows, but they cannot be keys. Here’s\nwhat happens if you try:\n>>>  t  =  [1,  2,  3]\n>>>  d  =  dict()\n>>>  d[t]  ='oops'\nTraceback  (most  recent  call  last):\n   File  \"<stdin>\",  line  1,  in  ?\nTypeError:  list  objects  are  unhashable\nI mentioned earlier that a dictionary is implemented using a hashtable and",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "d57be865d977560f5f1a0325",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 130,
+    "text": " a dictionary is implemented using a hashtable and that means that\nthe keys have to behashable.\nAhashis a function that takes a value (of any kind) and returns an integer.  Dictionaries\nuse these integers, called hash values, to store and look up key-value pairs.\nThis system works fine if the keys are immutable.  But if the keys are mutable, like lists,\nbad things happen. For example, when you create a key-value pair, Python hashes the key\nand stores it in the corresponding location. If you modi",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "89045a6d33c20f32d5945b25",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 130,
+    "text": "ores it in the corresponding location. If you modify the key and then hash it again, it\nwould go to a different location. In that case you might have two entries for the same key,\nor you might not be able to find a key. Either way, the dictionary wouldn’t work correctly.\nThat’s why keys have to be hashable, and why mutable types like lists aren’t. The simplest\nway to get around this limitation is to use tuples, which we will see in the next chapter.",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2253
+    }
+  },
+  {
+    "chunk_id": "8e031d6b69284531723cc3b5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 131,
+    "text": "11.6. Memos                                                                                                                                  109\n\n                                          Figure 11.2: Call graph.\n\nSince dictionaries are mutable, they can’t be used as keys, but theycanbe used as values.\n\n11.6    Memos\n\nIf you played with thefibonaccifunction from Section 6.7, you might have noticed that\nthe bigger the argument you provide, the longer the function takes to run.  Furthermore,\nthe r",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "da0b10e5c793b0892b09ccf6",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 131,
+    "text": "ger the function takes to run.  Furthermore,\nthe run time increases quickly.\n\nTo understand why, consider Figure 11.2, which shows thecall graphforfibonacciwith\nn=4:\n\nA call graph shows a set of function frames, with lines connecting each frame to the frames\nof the functions it calls. At the top of the graph,fibonacciwithn=4callsfibonacciwith\nn=3andn=2. In turn,fibonacciwithn=3callsfibonacciwithn=2andn=1. And so on.\n\nCount how many timesfibonacci(0)andfibonacci(1)are called.  This is an ineffici",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "68569c9a3b58179e3659f296",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 131,
+    "text": "(0)andfibonacci(1)are called.  This is an inefficient\nsolution to the problem, and it gets worse as the argument gets bigger.\n\nOne solution is to keep track of values that have already been computed by storing them\nin a dictionary. A previously computed value that is stored for later use is called amemo.\nHere is a “memoized” version offibonacci:\nknown  =  {0:0,  1:1}\n\ndef  fibonacci(n):\n      if  n  in  known:\n            return  known[n]\n\n      res  =  fibonacci(n-1)  +  fibonacci(n-2)\n      kn",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "6d13c5547c100094109d11f2",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 131,
+    "text": "res  =  fibonacci(n-1)  +  fibonacci(n-2)\n      known[n]  =  res\n      return  res\nknownis a dictionary that keeps track of the Fibonacci numbers we already know. It starts\nwith two items: 0 maps to 0 and 1 maps to 1.",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1567
+    }
+  },
+  {
+    "chunk_id": "158cbc6f982bef66e583800d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 132,
+    "text": "110                                                                                                             Chapter 11. Dictionaries\n\nWheneverfibonacciis called, it checksknown.  If the result is already there, it can return\nimmediately.   Otherwise it has to compute the new value,  add it to the dictionary,  and\nreturn it.\n\nIf you run this version offibonacciand compare it with the original, you will find that it\nis much faster.\n\n11.7    Global variables\n\nIn the previous example,knownis cre",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "2bb7478c5aa2a398b7e62944",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 132,
+    "text": "bal variables\n\nIn the previous example,knownis created outside the function, so it belongs to the special\nframe called__main__.  Variables in__main__are sometimes calledglobalbecause they\ncan be accessed from any function.   Unlike local variables,  which disappear when their\nfunction ends, global variables persist from one function call to the next.\n\nIt is common to use global variables forflags; that is, boolean variables that indicate (“flag”)\nwhether a condition is true.  For example,  some ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "0aa2b2880500c246338da79d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 132,
+    "text": "\nwhether a condition is true.  For example,  some programs use a flag namedverboseto\ncontrol the level of detail in the output:\nverbose  =  True\n\ndef  example1():\n      if  verbose:\n            print('Running  example1')\nIf you try to reassign a global variable, you might be surprised.  The following example is\nsupposed to keep track of whether the function has been called:\nbeen_called  =  False\n\ndef  example2():\n      been_called  =  True                  #  WRONG\nBut if you run it you will see",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "b490e62942f8f0f7ce9da254",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 132,
+    "text": "           #  WRONG\nBut if you run it you will see that the value ofbeen_calleddoesn’t change.  The problem\nis thatexample2creates a new local variable namedbeen_called. The local variable goes\naway when the function ends, and has no effect on the global variable.\n\nTo reassign a global variable inside a function you have todeclarethe global variable before\nyou use it:\nbeen_called  =  False\n\ndef  example2():\n      global  been_called\n      been_called  =  True\nTheglobal  statementtells  the  inte",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "e68d664ff69ab519d1e82021",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 132,
+    "text": "lled  =  True\nTheglobal  statementtells  the  interpreter  something  like,  “In  this  function,  when  I  say\nbeen_called, I mean the global variable; don’t create a local one.”\n\nHere’s an example that tries to update a global variable:\ncount  =  0\n\ndef  example3():\n      count  =  count  +  1                    #  WRONG\nIf you run it you get:",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2147
+    }
+  },
+  {
+    "chunk_id": "ad45781437fb380727a16c94",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 133,
+    "text": "11.8. Debugging                                                                                                                           111\n\nUnboundLocalError:  local  variable'count'referenced  before  assignment\nPython assumes thatcountis local, and under that assumption you are reading it before\nwriting it. The solution, again, is to declarecountglobal.\ndef  example3():\n      global  count\n      count  +=  1\nIf a global variable refers to a mutable value, you can modify the value without de",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "fac3cae404cda74790109d7d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 133,
+    "text": "mutable value, you can modify the value without declaring\nthe variable:\nknown  =  {0:0,  1:1}\n\ndef  example4():\n      known[2]  =  1\nSo you can add, remove and replace elements of a global list or dictionary, but if you want\nto reassign the variable, you have to declare it:\ndef  example5():\n      global  known\n      known  =  dict()\nGlobal variables can be useful, but if you have a lot of them, and you modify them fre-\nquently, they can make programs hard to debug.\n\n11.8    Debugging\n\nAs you wor",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "3d1cf8eb97083759e4d3ba62",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 133,
+    "text": "rams hard to debug.\n\n11.8    Debugging\n\nAs you work with bigger datasets it can become unwieldy to debug by printing and check-\ning the output by hand. Here are some suggestions for debugging large datasets:\n\nScale down the input:If possible, reduce the size of the dataset.  For example if the pro-\n       gram reads a text file, start with just the first 10 lines, or with the smallest example\n       you can find. You can either edit the files themselves, or (better) modify the program\n       so ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "f7d6b871279037aa27a97d77",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 133,
+    "text": "mselves, or (better) modify the program\n       so it reads only the firstnlines.\n       If there is an error, you can reducento the smallest value that manifests the error, and\n       then increase it gradually as you find and correct errors.\n\nCheck summaries and types:Instead of printing and checking the entire dataset, consider\n       printing summaries of the data: for example, the number of items in a dictionary or\n       the total of a list of numbers.\n       A common cause of runtime error",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "01820fd602e76f8dfc00026f",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 133,
+    "text": "of numbers.\n       A common cause of runtime errors is a value that is not the right type. For debugging\n       this kind of error, it is often enough to print the type of a value.\n\nWrite self-checks:Sometimes you can write code to check for errors automatically.  For\n       example, if you are computing the average of a list of numbers, you could check that\n       the result is not greater than the largest element in the list or less than the smallest.\n       This is called a “sanity check” bec",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "b5916cc8668b4b28a09e5ce9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 133,
+    "text": "allest.\n       This is called a “sanity check” because it detects results that are “insane”.\n       Another kind of check compares the results of two different computations to see if\n       they are consistent. This is called a “consistency check”.",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2498
+    }
+  },
+  {
+    "chunk_id": "b7be7d572e56fba654d2214a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 134,
+    "text": "112                                                                                                             Chapter 11. Dictionaries\n\nFormat the output:Formatting debugging output can make it easier to spot an error.  We\n       saw an example in Section 6.9. Another tool you might find useful is thepprintmod-\n       ule, which provides apprintfunction that displays built-in types in a more human-\n       readable format (pprintstands for “pretty print”).\n\nAgain, time you spend building scaffo",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "c179aded711c773113c51b5a",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 134,
+    "text": "ty print”).\n\nAgain, time you spend building scaffolding can reduce the time you spend debugging.\n\n11.9    Glossary\n\nmapping:A relationship in which each element of one set corresponds to an element of\n       another set.\n\ndictionary:A mapping from keys to their corresponding values.\n\nkey-value pair:The representation of the mapping from a key to a value.\n\nitem:In a dictionary, another name for a key-value pair.\n\nkey:An object that appears in a dictionary as the first part of a key-value pair.\n\nv",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "6f0180d2acc45fa465e8d8f1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 134,
+    "text": "ctionary as the first part of a key-value pair.\n\nvalue:An object that appears in a dictionary as the second part of a key-value pair. This is\n       more specific than our previous use of the word “value”.\n\nimplementation:A way of performing a computation.\n\nhashtable:The algorithm used to implement Python dictionaries.\n\nhash function:A function used by a hashtable to compute the location for a key.\n\nhashable:A type that has a hash function. Immutable types like integers, floats and strings\n     ",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "8cd5f658965006b44e48150b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 134,
+    "text": "able types like integers, floats and strings\n       are hashable; mutable types like lists and dictionaries are not.\n\nlookup:A dictionary operation that takes a key and finds the corresponding value.\n\nreverse lookup:A dictionary operation that takes a value and finds one or more keys that\n       map to it.\n\nraise statement:A statement that (deliberately) raises an exception.\n\nsingleton:A list (or other sequence) with a single element.\n\ncall graph:A diagram that shows every frame created during t",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "7efec1236fc99d87355335b1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 134,
+    "text": ":A diagram that shows every frame created during the execution of a program,\n       with an arrow from each caller to each callee.\n\nmemo:A computed value stored to avoid unnecessary future computation.\n\nglobal variable:A variable defined outside a function.  Global variables can be accessed\n       from any function.\n\nglobal statement:A statement that declares a variable name global.\n\nflag:A boolean variable used to indicate whether a condition is true.\n\ndeclaration:A statement likeglobalthat tel",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "028f39baa607bafb58bf4e87",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 134,
+    "text": " true.\n\ndeclaration:A statement likeglobalthat tells the interpreter something about a variable.",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2346
+    }
+  },
+  {
+    "chunk_id": "618754f1465b39328eeb014e",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": "11.10. Exercises                                                                                                                             113\n11.10    Exercises\n\nExercise 11.1.Write a function that reads the words inwords.txtand stores them as keys in a\ndictionary. It doesn’t matter what the values are. Then you can use theinoperator as a fast way to\ncheck whether a string is in the dictionary.\nIf you did Exercise 10.10, you can compare the speed of this implementation with the listinoperator",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "e28bc6e26589fac156bde6bb",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": "eed of this implementation with the listinoperator\nand the bisection search.\nExercise 11.2.Read the documentation of the dictionary methodsetdefaultand use it to write a\nmore concise version ofinvert_dict. Solution:https: // thinkpython. com/ code/ invert_\ndict. py.\nExercise  11.3.Memoize  the  Ackermann  function  from  Exercise  6.2  and  see  if  memoization\nmakes it possible to evaluate the function with bigger arguments.  Hint:  no.  Solution:https:\n// thinkpython. com/ code/ ackermann_ mem",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "0babb37f5837be26e91151ff",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": "n:https:\n// thinkpython. com/ code/ ackermann_ memo. py.\nExercise 11.4.If you did Exercise 10.7, you already have a function namedhas_duplicatesthat\ntakes a list as a parameter and returnsTrueif there is any object that appears more than once in the\nlist.\nUse  a  dictionary  to  write  a  faster,  simpler  version  ofhas_duplicates.   Solution:https: //\nthinkpython. com/ code/ has_ duplicates. py.\nExercise 11.5.Two words are “rotate pairs” if you can rotate one of them and get the other (see\nrot",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "88f35bf2f5af25fc4db89d8f",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": " can rotate one of them and get the other (see\nrotate_wordin Exercise 8.5).\nWrite  a  program  that  reads  a  wordlist  and  finds  all  the  rotate  pairs.    Solution:https: //\nthinkpython. com/ code/ rotate_ pairs. py.\nExercise 11.6.Here’s another Puzzler fromCar Talk(http: // www. cartalk. com/ content/\npuzzlers):\n\n       This was sent in by a fellow named Dan O’Leary. He came upon a common one-syllable,\n       five-letter word recently that has the following unique property. When you remov",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "82e5a5bfd2bca31766cf4e26",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": " has the following unique property. When you remove the\n       first letter, the remaining letters form a homophone of the original word, that is a word\n       that sounds exactly the same.  Replace the first letter, that is, put it back and remove\n       the second letter and the result is yet another homophone of the original word. And the\n       question is, what’s the word?\n       Now I’m going to give you an example that doesn’t work.  Let’s look at the five-letter\n       word, ‘wrack.’  W-",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "5c4d007f364bae60c2315bcc",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": " look at the five-letter\n       word, ‘wrack.’  W-R-A-C-K, you know like to ‘wrack with pain.’  If I remove the first\n       letter, I am left with a four-letter word, ’R-A-C-K.’ As in, ‘Holy cow, did you see the\n       rack on that buck!  It must have been a nine-pointer!’  It’s a perfect homophone.  If you\n       put the ‘w’ back, and remove the ‘r,’ instead, you’re left with the word, ‘wack,’ which is\n       a real word, it’s just not a homophone of the other two words.\n       But there is, h",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2750
+    }
+  },
+  {
+    "chunk_id": "c99e44350ecf432ae1b92070",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": "one of the other two words.\n       But there is, however, at least one word that Dan and we know of, which will yield two\n       homophones if you remove either of the first two letters to make two, new four-letter\n       words. The question is, what’s the word?\n\nYou can use the dictionary from Exercise 11.1 to check whether a string is in the word list.\n\nTo   check   whether   two   words   are   homophones,    you   can   use   the   CMU   Pronouncing\nDictionary.      You   can   download   it",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2700,
+      "end": 3200
+    }
+  },
+  {
+    "chunk_id": "7f06e17759d64f7618454585",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 135,
+    "text": "ouncing\nDictionary.      You   can   download   it   fromhttp: // www. speech. cs. cmu. edu/ cgi-bin/\ncmudictor   fromhttps: // thinkpython. com/ code/ c06dand   you   can   also   down-\nloadhttps: // thinkpython. com/ code/ pronounce. py,  which  provides  a  function  named\nread_dictionarythat reads the pronouncing dictionary and returns a Python dictionary that\nmaps from each word to a string that describes its primary pronunciation.",
+    "metadata": {
+      "chapter": "Dictionaries",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 3150,
+      "end": 3590
+    }
+  },
+  {
+    "chunk_id": "a464cdb6a0bc957818a560ea",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 137,
+    "text": "Chapter 12\n\nTuples\n\nThis chapter presents one more built-in type, the tuple, and then shows how lists, dictionar-\nies, and tuples work together.  I also present a useful feature for variable-length argument\nlists, the gather and scatter operators.\nOne note:  there is no consensus on how to pronounce “tuple”.   Some people say “tuh-\nple”, which rhymes with “supple”.  But in the context of programming, most people say\n“too-ple”, which rhymes with “quadruple”.\n\n12.1    Tuples are immutable\n\nA  tupl",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "41f52f58b6423a67591f5153",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 137,
+    "text": "quadruple”.\n\n12.1    Tuples are immutable\n\nA  tuple  is  a  sequence  of  values.   The  values  can  be  any  type,  and  they  are  indexed  by\nintegers, so in that respect tuples are a lot like lists. The important difference is that tuples\nare immutable.\nSyntactically, a tuple is a comma-separated list of values:\n>>>  t  ='a','b','c','d','e'\nAlthough it is not necessary, it is common to enclose tuples in parentheses:\n>>>  t  =  ('a','b','c','d','e')\nTo create a tuple with a single element, y",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "99c0ab1fe91073440df871df",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 137,
+    "text": "d','e')\nTo create a tuple with a single element, you have to include a final comma:\n>>>  t1  ='a',\n>>>  type(t1)\n<class'tuple'>\nA value in parentheses is not a tuple:\n>>>  t2  =  ('a')\n>>>  type(t2)\n<class'str'>\nAnother way to create a tuple is the built-in functiontuple.  With no argument, it creates\nan empty tuple:\n>>>  t  =  tuple()\n>>>  t\n()",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1247
+    }
+  },
+  {
+    "chunk_id": "de61b24b225c02cc65eec0cd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 138,
+    "text": "116                                                                                                                       Chapter 12. Tuples\n\nIf the argument is a sequence (string, list or tuple), the result is a tuple with the elements of\nthe sequence:\n>>>  t  =  tuple('lupins')\n>>>  t\n('l','u','p','i','n','s')\nBecausetupleis the name of a built-in function, you should avoid using it as a variable\nname.\n\nMost list operators also work on tuples. The bracket operator indexes an element:\n>>>  t  =",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "96a8df2d6fc4890983631e0e",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 138,
+    "text": "The bracket operator indexes an element:\n>>>  t  =  ('a','b','c','d','e')\n>>>  t[0]\n'a'\nAnd the slice operator selects a range of elements.\n>>>  t[1:3]\n('b','c')\nBut if you try to modify one of the elements of the tuple, you get an error:\n>>>  t[0]  ='A'\nTypeError:  object  doesn't  support  item  assignment\nBecause tuples are immutable,  you can’t modify the elements.  But you can replace one\ntuple with another:\n>>>  t  =  ('A',)  +  t[1:]\n>>>  t\n('A','b','c','d','e')\nThis statement makes a new",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "30b66993162b302308a3fd55",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 138,
+    "text": "t\n('A','b','c','d','e')\nThis statement makes a new tuple and then makestrefer to it.\n\nThe relational operators work with tuples and other sequences; Python starts by comparing\nthe first element from each sequence. If they are equal, it goes on to the next elements, and\nso on, until it finds elements that differ.  Subsequent elements are not considered (even if\nthey are really big).\n>>>  (0,  1,  2)  <  (0,  3,  4)\nTrue\n>>>  (0,  1,  2000000)  <  (0,  3,  4)\nTrue\n\n12.2    Tuple assignment\n\nIt is ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "c5fdd2c4f3cfdf528c1686de",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 138,
+    "text": "(0,  3,  4)\nTrue\n\n12.2    Tuple assignment\n\nIt is often useful to swap the values of two variables. With conventional assignments, you\nhave to use a temporary variable. For example, to swapaandb:\n>>>  temp  =  a\n>>>  a  =  b\n>>>  b  =  temp\nThis solution is cumbersome;tuple assignmentis more elegant:\n>>>  a,  b  =  b,  a",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1672
+    }
+  },
+  {
+    "chunk_id": "2447d0669f460b89d7564f45",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 139,
+    "text": "12.3. Tuples as return values                                                                                                      117\n\nThe left side is a tuple of variables;  the right side is a tuple of expressions.   Each value\nis assigned to its respective variable.  All the expressions on the right side are evaluated\nbefore any of the assignments.\n\nThe number of variables on the left and the number of values on the right have to be the\nsame:\n>>>  a,  b  =  1,  2,  3\nValueError:  too  many  ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "02015e674083cb6e33f53ea5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 139,
+    "text": "\n>>>  a,  b  =  1,  2,  3\nValueError:  too  many  values  to  unpack\nMore generally, the right side can be any kind of sequence (string, list or tuple). For exam-\nple, to split an email address into a user name and a domain, you could write:\n\n>>>  addr  ='monty@python.org'\n>>>  uname,  domain  =  addr.split('@')\nThe return value fromsplitis a list with two elements;  the first element is assigned to\nuname, the second todomain.\n>>>  uname\n'monty'\n>>>  domain\n'python.org'\n\n12.3    Tuples as return",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "c9d0d4dadf1c0dedbe4218f2",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 139,
+    "text": ">>>  domain\n'python.org'\n\n12.3    Tuples as return values\n\nStrictly speaking, a function can only return one value, but if the value is a tuple, the effect\nis the same as returning multiple values.  For example, if you want to divide two integers\nand compute the quotient and remainder, it is inefficient to computex//yand thenx%y. It\nis better to compute them both at the same time.\n\nThe built-in functiondivmodtakes two arguments and returns a tuple of two values, the\nquotient and remainder. You c",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "881e4983d94310a11796a1fd",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 139,
+    "text": "e of two values, the\nquotient and remainder. You can store the result as a tuple:\n>>>  t  =  divmod(7,  3)\n>>>  t\n(2,  1)\nOr use tuple assignment to store the elements separately:\n>>>  quot,  rem  =  divmod(7,  3)\n>>>  quot\n2\n>>>  rem\n1\nHere is an example of a function that returns a tuple:\ndef  min_max(t):\n      return  min(t),  max(t)\nmaxandminare built-in functions that find the largest and smallest elements of a sequence.\nmin_maxcomputes both and returns a tuple of two values.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1835
+    }
+  },
+  {
+    "chunk_id": "de245a3b0df9717b5ae60135",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 140,
+    "text": "118                                                                                                                       Chapter 12. Tuples\n12.4    Variable-length argument tuples\n\nFunctions can take a variable number of arguments.  A parameter name that begins with\n*gathersarguments into a tuple.  For example,printalltakes any number of arguments\nand prints them:\ndef  printall(*args):\n     print(args)\nThe gather parameter can have any name you like, butargsis conventional.  Here’s how\nthe func",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "adf686d0a4693f5a2d3e2851",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 140,
+    "text": "like, butargsis conventional.  Here’s how\nthe function works:\n>>>  printall(1,  2.0,'3')\n(1,  2.0,'3')\nThe complement of gather isscatter. If you have a sequence of values and you want to pass\nit to a function as multiple arguments, you can use the*operator.  For example,divmod\ntakes exactly two arguments; it doesn’t work with a tuple:\n>>>  t  =  (7,  3)\n>>>  divmod(t)\nTypeError:  divmod  expected  2  arguments,  got  1\nBut if you scatter the tuple, it works:\n>>>  divmod(*t)\n(2,  1)\nMany of the ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "43e71a17d6c36207a6857730",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 140,
+    "text": "le, it works:\n>>>  divmod(*t)\n(2,  1)\nMany of the built-in functions use variable-length argument tuples. For example,maxand\nmincan take any number of arguments:\n>>>  max(1,  2,  3)\n3\nButsumdoes not.\n>>>  sum(1,  2,  3)\nTypeError:  sum  expected  at  most  2  arguments,  got  3\nAs an exercise, write a function calledsum_allthat takes any number of arguments and\nreturns their sum.\n\n12.5    Lists and tuples\n\nzipis a built-in function that takes two or more sequences and interleaves them. The name\n",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "86f346c60c07521b789acf10",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 140,
+    "text": " or more sequences and interleaves them. The name\nof the function refers to a zipper, which interleaves two rows of teeth.\n\nThis example zips a string and a list:\n>>>  s  ='abc'\n>>>  t  =  [0,  1,  2]\n>>>  zip(s,  t)\n<zip  object  at  0x7f7d0a9e7c48>\nThe result is azip objectthat knows how to iterate through the pairs.  The most common\nuse ofzipis in aforloop:",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1712
+    }
+  },
+  {
+    "chunk_id": "3b0dbb23d5743b43aca4e02c",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 141,
+    "text": "12.5. Lists and tuples                                                                                                                   119\n\n>>>  for  pair  in  zip(s,  t):\n...          print(pair)\n...\n('a',  0)\n('b',  1)\n('c',  2)\nA  zip  object  is  a  kind  ofiterator,  which  is  any  object  that  iterates  through  a  sequence.\nIterators are similar to lists in some ways, but unlike lists, you can’t use an index to select\nan element from an iterator.\n\nIf you want to use list operators and",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "739704510308989537f4daa9",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 141,
+    "text": "n iterator.\n\nIf you want to use list operators and methods, you can use a zip object to make a list:\n>>>  list(zip(s,  t))\n[('a',  0),  ('b',  1),  ('c',  2)]\nThe result is a list of tuples; in this example, each tuple contains a character from the string\nand the corresponding element from the list.\nIf the sequences are not the same length, the result has the length of the shorter one.\n>>>  list(zip('Anne','Elk'))\n[('A','E'),  ('n','l'),  ('n','k')]\nYou can use tuple assignment in aforloop to tr",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "21fe7ae21d4ad1dc70cd4f1b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 141,
+    "text": "')]\nYou can use tuple assignment in aforloop to traverse a list of tuples:\nt  =  [('a',  0),  ('b',  1),  ('c',  2)]\nfor  letter,  number  in  t:\n      print(number,  letter)\nEach time through the loop, Python selects the next tuple in the list and assigns the ele-\nments toletterandnumber. The output of this loop is:\n0  a\n1  b\n2  c\nIf you combinezip,forand tuple assignment, you get a useful idiom for traversing two\n(or more) sequences at the same time.  For example,has_matchtakes two sequences,t",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "34567e06cb3534bf03743381",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 141,
+    "text": " time.  For example,has_matchtakes two sequences,t1\nandt2, and returnsTrueif there is an indexisuch thatt1[i]  ==  t2[i]:\ndef  has_match(t1,  t2):\n      for  x,  y  in  zip(t1,  t2):\n            if  x  ==  y:\n                   return  True\n      return  False\nIf you need to traverse the elements of a sequence and their indices, you can use the built-in\nfunctionenumerate:\nfor  index,  element  in  enumerate('abc'):\n      print(index,  element)\nThe result fromenumerateis an enumerate object, whic",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b8620041fa0effbeca808423",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 141,
+    "text": "e result fromenumerateis an enumerate object, which iterates a sequence of pairs; each\npair contains an index (starting from 0) and an element from the given sequence.  In this\nexample, the output is\n0  a\n1  b\n2  c\nAgain.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2021
+    }
+  },
+  {
+    "chunk_id": "1508c65e4fcc3252b1d008b5",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 142,
+    "text": "120                                                                                                                       Chapter 12. Tuples\n12.6    Dictionaries and tuples\n\nDictionaries  have  a  method  calleditemsthat  returns  a  sequence  of  tuples,  where  each\ntuple is a key-value pair.\n>>>  d  =  {'a':0,'b':1,'c':2}\n>>>  t  =  d.items()\n>>>  t\ndict_items([('c',  2),  ('a',  0),  ('b',  1)])\nThe result is adict_itemsobject, which is an iterator that iterates the key-value pairs. You\ncan ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "89d8b3def67c62341940ba62",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 142,
+    "text": "erator that iterates the key-value pairs. You\ncan use it in aforloop like this:\n>>>  for  key,  value  in  d.items():\n...          print(key,  value)\n...\nc  2\na  0\nb  1\nAs you should expect from a dictionary, the items are in no particular order.\nGoing in the other direction, you can use a list of tuples to initialize a new dictionary:\n>>>  t  =  [('a',  0),  ('c',  2),  ('b',  1)]\n>>>  d  =  dict(t)\n>>>  d\n{'a':  0,'c':  2,'b':  1}\nCombiningdictwithzipyields a concise way to create a dictionary",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "504a6e8505ff64723ddb26e4",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 142,
+    "text": "withzipyields a concise way to create a dictionary:\n>>>  d  =  dict(zip('abc',  range(3)))\n>>>  d\n{'a':  0,'c':  2,'b':  1}\nThe dictionary methodupdatealso takes a list of tuples and adds them, as key-value pairs,\nto an existing dictionary.\nIt is common to use tuples as keys in dictionaries (primarily because you can’t use lists). For\nexample, a telephone directory might map from last-name, first-name pairs to telephone\nnumbers. Assuming that we have definedlast,firstand, we could write:number\nd",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "bfd260cb7f62c7614d2e0b90",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 142,
+    "text": "have definedlast,firstand, we could write:number\ndirectory[last,  first]  =  number\nThe expression in brackets is a tuple.  We could use tuple assignment to traverse this dic-\ntionary.\nfor  last,  first  in  directory:\n      print(first,  last,  directory[last,first])\nThis loop traverses the keys indirectory, which are tuples. It assigns the elements of each\ntuple tolastandfirst, then prints the name and corresponding telephone number.\nThere  are  two  ways  to  represent  tuples  in  a  state  ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b291545d12ab0a0f37ec961f",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 142,
+    "text": "  two  ways  to  represent  tuples  in  a  state  diagram.   The  more  detailed  version\nshows  the  indices  and  elements  just  as  they  appear  in  a  list.    For  example,  the  tuple\n('Cleese','John')would appear as in Figure 12.1.\nBut in a larger diagram you might want to leave out the details. For example, a diagram of\nthe telephone directory might appear as in Figure 12.2.\nHere the tuples are shown using Python syntax as a graphical shorthand.  The telephone\nnumber in the diagram is ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "ce90de80e594bf87565c9ce1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 142,
+    "text": "horthand.  The telephone\nnumber in the diagram is the complaints line for the BBC, so please don’t call it.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2357
+    }
+  },
+  {
+    "chunk_id": "6112ef3f14dbdce1651616cf",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 143,
+    "text": "12.7. Sequences of sequences                                                                                                    121\n\n                                        Figure 12.1: State diagram.\n\n                                        Figure 12.2: State diagram.\n\n12.7    Sequences of sequences\n\nI have focused on lists of tuples, but almost all of the examples in this chapter also work\nwith lists of lists, tuples of tuples, and tuples of lists.  To avoid enumerating the possible\ncombinatio",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "09fd53c6531bd3e049f40ac1",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 143,
+    "text": "sts.  To avoid enumerating the possible\ncombinations, it is sometimes easier to talk about sequences of sequences.\n\nIn many contexts, the different kinds of sequences (strings, lists and tuples) can be used\ninterchangeably. So how should you choose one over the others?\n\nTo start with the obvious, strings are more limited than other sequences because the ele-\nments have to be characters. They are also immutable. If you need the ability to change the\ncharacters in a string (as opposed to creating ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "9e89f02d1b0371e93337719e",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 143,
+    "text": "he\ncharacters in a string (as opposed to creating a new string), you might want to use a list of\ncharacters instead.\n\nLists are more common than tuples, mostly because they are mutable.  But there are a few\ncases where you might prefer tuples:\n\n   1.  In some contexts, like areturnstatement, it is syntactically simpler to create a tuple\n       than a list.\n\n   2.  If you want to use a sequence as a dictionary key, you have to use an immutable type\n       like a tuple or string.\n\n   3.  If you ar",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "45bb231e04feca243762ea38",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 143,
+    "text": "e\n       like a tuple or string.\n\n   3.  If you are passing a sequence as an argument to a function, using tuples reduces the\n       potential for unexpected behavior due to aliasing.\n\nBecause tuples are immutable, they don’t provide methods likesortandreverse, which\nmodify existing lists.  But Python provides the built-in functionsorted, which takes any\nsequence and returns a new list with the same elements in sorted order,  andreversed,\nwhich takes a sequence and returns an iterator that trave",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b4373707808f7673c8478162",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 143,
+    "text": "akes a sequence and returns an iterator that traverses the list in reverse order.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 1881
+    }
+  },
+  {
+    "chunk_id": "7982538be607d3be4b35d251",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 144,
+    "text": "122                                                                                                                       Chapter 12. Tuples\n12.8    Debugging\n\nLists, dictionaries and tuples are examples ofdata structures; in this chapter we are starting\nto see compound data structures, like lists of tuples, or dictionaries that contain tuples as\nkeys and lists as values. Compound data structures are useful, but they are prone to what\nI callshape errors; that is, errors caused when a data struct",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "943faeaa2301dad0bef205ef",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 144,
+    "text": " errors; that is, errors caused when a data structure has the wrong type, size, or\nstructure.  For example, if you are expecting a list with one integer and I give you a plain\nold integer (not in a list), it won’t work.\n\nTo  help  debug  these  kinds  of  errors,  I  have  written  a  module  calledstructshapethat\nprovides  a  function,  also  calledstructshape,  that  takes  any  kind  of  data  structure  as\nan argument and returns a string that summarizes its shape.  You can download it from\n",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "893e6dae7d555be5c031322d",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 144,
+    "text": "t summarizes its shape.  You can download it from\nhttps://thinkpython.com/code/structshape.py\n\nHere’s the result for a simple list:\n>>>  from  structshape  import  structshape\n>>>  t  =  [1,  2,  3]\n>>>  structshape(t)\n'list  of  3  int'\nA fancier program might write “list of 3 ints”, but it was easier not to deal with plurals.\nHere’s a list of lists:\n>>>  t2  =  [[1,2],  [3,4],  [5,6]]\n>>>  structshape(t2)\n'list  of  3  list  of  2  int'\nIf the elements of the list are not the same type,structs",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "d910d784411ed0093c6f2c08",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 144,
+    "text": "elements of the list are not the same type,structshapegroups them, in order, by\ntype:\n>>>  t3  =  [1,  2,  3,  4.0,'5','6',  [7],  [8],  9]\n>>>  structshape(t3)\n'list  of  (3  int,  float,  2  str,  2  list  of  int,  int)'\nHere’s a list of tuples:\n>>>  s  ='abc'\n>>>  lt  =  list(zip(t,  s))\n>>>  structshape(lt)\n'list  of  3  tuple  of  (int,  str)'\nAnd here’s a dictionary with 3 items that map integers to strings.\n>>>  d  =  dict(lt)\n>>>  structshape(d)\n'dict  of  3  int->str'\nIf you are having",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b9feb893d0213e1e206e278b",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 144,
+    "text": "shape(d)\n'dict  of  3  int->str'\nIf you are having trouble keeping track of your data structures,structshapecan help.\n\n12.9    Glossary\n\ntuple:An immutable sequence of elements.\n\ntuple assignment:An assignment with a sequence on the right side and a tuple of vari-\n       ables on the left. The right side is evaluated and then its elements are assigned to the\n       variables on the left.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2190
+    }
+  },
+  {
+    "chunk_id": "a305f65e735f636ee2aeddb6",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 145,
+    "text": "12.10. Exercises                                                                                                                             123\n\ngather:An operation that collects multiple arguments into a tuple.\n\nscatter:An operation that makes a sequence behave like multiple arguments.\n\nzip object:The result of calling a built-in functionzip;  an object that iterates through a\n       sequence of tuples.\n\niterator:An object that can iterate through a sequence,  but which does not provide list\n ",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "2d9fc6e9db49b5f0521a3846",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 145,
+    "text": "ugh a sequence,  but which does not provide list\n       operators and methods.\n\ndata structure:A collection of related values, often organized in lists, dictionaries, tuples,\n       etc.\n\nshape error:An error caused because a value has the wrong shape; that is, the wrong type\n       or size.\n\n12.10    Exercises\n\nExercise  12.1.Write  a  function  calledmost_frequentthat  takes  a  string  and  prints  the  let-\nters in decreasing order of frequency.  Find text samples from several different lang",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "240fee37d9ce2cd3bd2ebb88",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 145,
+    "text": "cy.  Find text samples from several different languages and see\nhow letter frequency varies between languages.   Compare your results with the tables athttp:\n// en. wikipedia. org/ wiki/ Letter_ frequencies.   Solution:https: // thinkpython.\ncom/ code/ most_ frequent. py.\nExercise 12.2.More anagrams!\n\n   1.  Write a program that reads a word list from a file (see Section 9.1) and prints all the sets of\n       words that are anagrams.\n       Here is an example of what the output might look like:\n",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "cf1b40d4ce968824a0d1f122",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 145,
+    "text": "is an example of what the output might look like:\n\n       ['deltas','desalt','lasted','salted','slated','staled']\n       ['retainers','ternaries']\n       ['generating','greatening']\n       ['resmelts','smelters','termless']\n\n       Hint:  you might want to build a dictionary that maps from a collection of letters to a list\n       of words that can be spelled with those letters.  The question is, how can you represent the\n       collection of letters in a way that can be used as a key?\n\n   2.  Mo",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "b2dd8f7327a3b0e39904e418",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 145,
+    "text": "ers in a way that can be used as a key?\n\n   2.  Modify the previous program so that it prints the longest list of anagrams first, followed by\n       the second longest, and so on.\n\n   3.  In Scrabble a “bingo” is when you play all seven tiles in your rack, along with a letter on\n       the board, to form an eight-letter word.  What collection of 8 letters forms the most possible\n       bingos?\n       Solution:https: // thinkpython. com/ code/ anagram_ sets. py.\nExercise 12.3.Two words form a “me",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 2300
+    }
+  },
+  {
+    "chunk_id": "99a942ad29871aac3362d227",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 145,
+    "text": "gram_ sets. py.\nExercise 12.3.Two words form a “metathesis pair” if you can transform one into the other by\nswapping two letters; for example, “converse” and “conserve”.  Write a program that finds all of\nthe metathesis pairs in the dictionary. Hint: don’t test all pairs of words, and don’t test all possible\nswaps.  Solution:https: // thinkpython. com/ code/ metathesis. py.  Credit:  This exercise\nis inspired by an example athttp: // puzzlers. org.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 2250,
+      "end": 2702
+    }
+  },
+  {
+    "chunk_id": "1bd265eab08341a9604a6a94",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 146,
+    "text": "124                                                                                                                       Chapter 12. Tuples\n\nExercise   12.4.Here’s   another   Car   Talk   Puzzler   (http: // www. cartalk. com/ content/\npuzzlers):\n\n       What is the longest English word, that remains a valid English word, as you remove its\n       letters one at a time?\n       Now, letters can be removed from either end, or the middle, but you can’t rearrange any\n       of the letters. Every ti",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 0,
+      "end": 500
+    }
+  },
+  {
+    "chunk_id": "ee10074640d82f93157fbdac",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 146,
+    "text": "an’t rearrange any\n       of the letters. Every time you drop a letter, you wind up with another English word. If\n       you do that, you’re eventually going to wind up with one letter and that too is going\n       to be an English word—one that’s found in the dictionary.  I want to know what’s the\n       longest word and how many letters does it have?\n       I’m going to give you a little modest example:  Sprite.  Ok?  You start off with sprite,\n       you take a letter off, one from the interio",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 450,
+      "end": 950
+    }
+  },
+  {
+    "chunk_id": "c90044661b72f28c9ac95e03",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 146,
+    "text": "       you take a letter off, one from the interior of the word, take the r away, and we’re left\n       with the word spite, then we take the e off the end, we’re left with spit, we take the s off,\n       we’re left with pit, it, and I.\n\nWrite a program to find all words that can be reduced in this way, and then find the longest one.\n\nThis exercise is a little more challenging than most, so here are some suggestions:\n\n   1.  You might want to write a function that takes a word and computes a lis",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 900,
+      "end": 1400
+    }
+  },
+  {
+    "chunk_id": "a859d7f8610b7f2c5379aab3",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 146,
+    "text": "te a function that takes a word and computes a list of all the words that\n       can be formed by removing one letter. These are the “children” of the word.\n\n   2.  Recursively, a word is reducible if any of its children are reducible.  As a base case, you can\n       consider the empty string reducible.\n\n   3.  The wordlist I provided,words.txt, doesn’t contain single letter words. So you might want\n       to add “I”, “a”, and the empty string.\n\n   4.  To improve the performance of your program,",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1350,
+      "end": 1850
+    }
+  },
+  {
+    "chunk_id": "da140a8f2704feb8eee86f02",
+    "document_id": "thinkpython2",
+    "source": "data/raw/thinkpython2.pdf",
+    "page": 146,
+    "text": "   4.  To improve the performance of your program, you might want to memoize the words that are\n       known to be reducible.\n\nSolution:https: // thinkpython. com/ code/ reducible. py.",
+    "metadata": {
+      "chapter": "Tuples",
+      "version": "2nd edition, 2.4.1",
+      "language": "en",
+      "start": 1800,
+      "end": 1984
+    }
+  }
+]
